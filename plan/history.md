@@ -13,6 +13,30 @@ What changed, why, and what it means for the next step.
 
 ---
 
+## 2026-09-20 — Typography: JetBrains Mono
+**Phase:** post-launch · **Status:** done
+
+Headings and all interface chrome — nav, site name, section labels, tags, captions,
+meta lines, table of contents, code — are now JetBrains Mono, the face Sanjith uses in
+kitty (`~/.config/kitty/custom.conf`, `JetBrainsMono Nerd Font Mono`, 13pt).
+
+- **The unpatched font, not the Nerd Font build.** The Nerd patch adds Powerline and
+  Devicon glyphs that only a terminal uses, at several megabytes. Google Fonts serves the
+  same letterforms at roughly 30 KB per weight.
+- **Running prose stays proportional.** Monospace fits ~30% fewer words per line and
+  flattens the italic/bold hierarchy, which tells over a 1,500-word write-up.
+- **Typeface roles are now tokens** — `--body`, `--heading`, `--ui`. Setting `--body` to
+  `var(--mono)` turns the whole site full-terminal in one line, so the decision stays
+  cheap to revisit.
+- Display sizes came down (`--step-4` 2.9rem → 2.5rem) and tracking tightened, since mono
+  runs wide at large sizes.
+
+This is a deliberate exception to the roadmap's "no web fonts unless one is clearly worth
+it": one family, one stylesheet request, preconnected, `display=swap`, and the fallback
+stack is the system monospace.
+
+---
+
 ## 2026-09-20 — Live on GitHub Pages
 **Phase:** 5 — Deploy · **Status:** done
 
