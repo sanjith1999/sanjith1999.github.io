@@ -16,7 +16,7 @@ block, and the distance between them is where most of the engineering actually l
 
 - **Signal processing** — modulation and demodulation, synchronisation, channel
   estimation, filter design.
-- **RTL and FPGA** — Verilog/VHDL, fixed-point arithmetic, pipelining, timing closure,
+- **RTL and FPGA** — VHDL, fixed-point arithmetic, pipelining, timing closure,
   hardware/software co-design.
 - **Modelling** — MATLAB and Python for system models, bit-accurate references and
   verification data.

@@ -2,7 +2,7 @@
 
 A personal portfolio and writing site, rebuilt to be simple enough to maintain alone.
 
-Status: Phases 1–4 built. Phase 5 (deploy) pending.
+Status: live at https://sanjith1999.github.io — Phases 0–5 done. Phase 6 is optional.
 Last updated: 2026-09-20
 
 ---
@@ -187,13 +187,13 @@ list on the home page, the `figure.html` include, KaTeX wiring, Rouge styling.
 **Done when:** MicroMouse and PID are migrated from the old site, with their images, and
 read well on a phone.
 
-### Phase 5 — Deploy ← next
+### Phase 5 — Deploy ✅
 Create the `sanjith1999.github.io` repo, push, enable Pages, verify the live build. Add
 `README.md` documenting the one-file-per-project workflow.
 **Done when:** the site is live at `https://sanjith1999.github.io` and a new commit
 redeploys it.
 
-### Phase 6 — Later, only if wanted
+### Phase 6 — Later, only if wanted ← next
 Tag filtering on the listing · RSS feed · sitemap and richer SEO tags · a `_posts/` blog
 collection alongside projects · custom domain · an "uses/now" page.
 

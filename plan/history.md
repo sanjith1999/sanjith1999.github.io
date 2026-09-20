@@ -13,6 +13,55 @@ What changed, why, and what it means for the next step.
 
 ---
 
+## 2026-09-20 — Live on GitHub Pages
+**Phase:** 5 — Deploy · **Status:** done
+
+The site is live at **https://sanjith1999.github.io**.
+
+### Repository and access
+
+The repo is `sanjith1999/sanjith1999.github.io`, owned by the **sanjith1999** account.
+The SSH key on this machine belongs to a *different* account, **sanjith-1021**, which was
+added as a collaborator. The first push failed with `Permission ... denied to
+sanjith-1021` because the collaborator invitation had not been accepted yet; accepting it
+fixed it. Worth remembering: read access worked throughout (the repo is public), only
+writes were blocked, so `git ls-remote` succeeding proves nothing about push rights.
+
+Commits are authored as `Sanjith Shanmugathashan <shansanjithofficial@gmail.com>`, not
+the global git identity on this machine (a work address).
+
+### Commit convention
+
+From now on commit subjects carry a **`WIP001:`** prefix, until the site reaches a
+significant change, at which point the number is bumped rather than dropped.
+
+### Verified on the live site
+
+All eleven published URLs return 200 with the right content types — the four pages, both
+projects, the stylesheet, the script, the favicon, an image and the 404. Then, in the
+rendered HTML:
+
+- **Maths:** 3 display and 15 inline expressions emitted as `\[ \]` / `\( \)`, with no
+  leftover `$$` anywhere. KaTeX's CSS and auto-render are present on the project page and
+  **absent from the home page**, which is the conditional loading working as intended.
+- **Table of contents:** all five headings extracted with correct ids and clean text,
+  including the section containing the C code block that broke the earlier implementation.
+- **Code:** one Rouge-highlighted block. **Figures:** caption rendered.
+- **Listings:** both projects on `/projects/` and on the home page.
+- **Navigation:** `aria-current="page"` lands on the right item per page.
+
+### Not yet verified
+
+Rendered *appearance* — KaTeX output, dark mode, and the mobile breakpoint — has only
+been checked in markup, not in a browser. Worth a look on a phone and with the system
+theme flipped.
+
+**Next:** replace the `TODO(sanjith)` prose in both project write-ups with the real
+numbers and results. After that, Phase 6 items are optional: tag filtering, an RSS feed,
+a sitemap, or a `_posts/` blog collection.
+
+---
+
 ## 2026-09-20 — Phases 1–4: the site is built
 **Phase:** 1–4 · **Status:** done
 
