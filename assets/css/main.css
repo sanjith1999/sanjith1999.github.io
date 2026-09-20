@@ -25,20 +25,18 @@
   --sans:  ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
            "Helvetica Neue", Arial, sans-serif;
 
-  /* Roles. Interface chrome and headings are monospace; running prose is not,
-     because monospace costs ~30% of the words per line and flattens the
-     italic/bold hierarchy over a long read.
-     To go full terminal, set --body and --heading to var(--mono). */
-  --body:    var(--serif);
+  /* Roles. The whole site is monospace — a deliberate terminal aesthetic.
+     Set --body back to var(--serif) for proportional running prose. */
+  --body:    var(--mono);
   --heading: var(--mono);
   --ui:      var(--mono);
 
-  --measure: 66ch;      /* prose line length */
+  --measure: 68ch;      /* in a mono face, exactly 68 characters */
   --wide:    58rem;     /* full container */
   --gutter:  1.25rem;
 
   --step--1: 0.875rem;
-  --step-0:  1.0625rem;
+  --step-0:  1rem;
   --step-1:  1.3rem;
   --step-2:  1.65rem;
   --step-3:  2rem;
@@ -86,7 +84,7 @@ body {
   color: var(--ink);
   font-family: var(--body);
   font-size: var(--step-0);
-  line-height: 1.7;
+  line-height: 1.75;
   text-rendering: optimizeLegibility;
   display: flex;
   flex-direction: column;
@@ -174,7 +172,7 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 }
 .eyebrow a { color: inherit; text-decoration: none; }
 .eyebrow a:hover { color: var(--accent); }
-.lede { font-family: var(--body); font-size: var(--step-1); color: var(--ink-muted); line-height: 1.5; }
+.lede { font-family: var(--body); font-size: var(--step-1); color: var(--ink-muted); line-height: 1.55; }
 
 /* --- Home ----------------------------------------------------------------- */
 .hero { padding-block: var(--space-4) var(--space-5); max-width: var(--measure); }
@@ -284,7 +282,7 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 }
 
 /* --- Code ----------------------------------------------------------------- */
-code, kbd, samp, pre { font-family: var(--mono); font-size: 0.85em; }
+code, kbd, samp, pre { font-family: var(--mono); font-size: 0.9em; }
 :not(pre) > code {
   background: var(--bg-sunk); padding: 0.12em 0.35em; border-radius: 3px;
   color: var(--ink); word-break: break-word;
