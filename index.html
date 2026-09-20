@@ -1,0 +1,54 @@
+---
+layout: default
+title: Home
+---
+<div class="wrap">
+
+  <section class="hero">
+    <h1>Sanjith Shanmugathashan</h1>
+    <p class="hero-role" data-roles="DSP / FPGA Engineer|RTL developer|PHY layer tinkerer">DSP / FPGA Engineer</p>
+    <p>
+      I build the physical layer of communication systems — and write up the ideas
+      that turn up along the way.
+    </p>
+  </section>
+
+  <section class="section" id="about">
+    <h2 class="section-title">About</h2>
+    <div class="prose">
+      <p>
+        I work on the PHY layer of advanced communication systems, across the whole
+        pipeline: system design, MATLAB modelling, RTL development and hardware
+        deployment. Owning a design end to end is what taught me to hold both the
+        technical detail and the architectural view at once.
+      </p>
+      <p>
+        Outside that, most of my time goes to small hardware projects — robots,
+        controllers, signal-processing experiments — and to writing them down properly.
+        <a href="{{ '/about/' | relative_url }}">More about me →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <h2 class="section-title">Selected work</h2>
+    {%- assign recent = site.projects | sort: "date" | reverse -%}
+    <ul class="entries">
+      {%- for project in recent limit: 3 -%}
+        {% include project-card.html project=project %}
+      {%- endfor -%}
+    </ul>
+    <p class="more"><a href="{{ '/projects/' | relative_url }}">All work →</a></p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="prose">
+      <p>Open to interesting problems and good conversation.</p>
+      <p class="contact-email">
+        <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      </p>
+    </div>
+  </section>
+
+</div>

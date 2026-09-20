@@ -1,0 +1,11 @@
+{%- assign p = include.project -%}
+<li class="entry">
+  <a class="entry-link" href="{{ p.url | relative_url }}">
+    <h3 class="entry-title">{{ p.title }}</h3>
+    <p class="entry-summary">{{ p.summary }}</p>
+  </a>
+  <p class="entry-meta">
+    {%- if p.date %}<time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %Y" }}</time>{% endif %}
+    {%- if p.tags %}{% for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}{% endif %}
+  </p>
+</li>

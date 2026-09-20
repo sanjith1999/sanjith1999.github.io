@@ -1,0 +1,60 @@
+# Site metadata -------------------------------------------------------------
+title: Sanjith Shanmugathashan
+tagline: DSP / FPGA Engineer
+description: >-
+  Physical-layer engineering for advanced communication systems — system design,
+  MATLAB modelling, RTL development and hardware deployment. Notes and project
+  write-ups.
+url: "https://sanjith1999.github.io"
+baseurl: ""
+lang: en
+
+author:
+  name: Sanjith Shanmugathashan
+  email: shansanjithofficial@gmail.com
+
+# Content -------------------------------------------------------------------
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Later entries win when several scopes match, so the collection default
+# must come after the site-wide one.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      toc: true
+
+# Build ---------------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  # Emits \( \) and \[ \] , which KaTeX auto-render picks up. See README.
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+sass:
+  style: compressed
+
+exclude:
+  - plan/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - .jekyll-cache/

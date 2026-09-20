@@ -1,0 +1,10 @@
+# Edited in one place; rendered in the footer and the contact section.
+- name: GitHub
+  url: https://github.com/sanjith1999
+  icon: github
+- name: LinkedIn
+  url: https://www.linkedin.com/in/sanjith-shanmugathashan-1377571b8/
+  icon: linkedin
+- name: Email
+  url: mailto:shansanjithofficial@gmail.com
+  icon: mail

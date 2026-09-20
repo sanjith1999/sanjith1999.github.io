@@ -1,0 +1,13 @@
+{%- comment -%}
+  Usage from Markdown:
+  {% include figure.html src="/assets/images/micromouse/mouse.jpeg"
+                         alt="The assembled robot"
+                         caption="The assembled robot, 90 × 80 mm."
+                         wide=true %}
+{%- endcomment -%}
+<figure class="figure{% if include.wide %} figure--wide{% endif %}">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy" decoding="async">
+  {%- if include.caption %}
+  <figcaption>{{ include.caption | markdownify | remove: '<p>' | remove: '</p>' }}</figcaption>
+  {%- endif %}
+</figure>

@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <button class="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      {%- assign nav = "/,Home|/projects/,Work|/about/,About|/contact/,Contact" | split: "|" -%}
+      {%- for item in nav -%}
+        {%- assign parts = item | split: "," -%}
+        {%- assign href = parts[0] -%}
+        <a href="{{ href | relative_url }}"
+           {% if page.url == href or href != '/' and page.url contains href %}aria-current="page"{% endif %}>{{ parts[1] }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</header>
