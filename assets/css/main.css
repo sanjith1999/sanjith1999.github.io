@@ -20,23 +20,27 @@
      glyphs are terminal-only and would cost megabytes here). */
   --mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
            Consolas, "Liberation Mono", monospace;
+  /* Recursive — proportional, but drawn from a monospace design, so it sits
+     beside JetBrains Mono without reading as a second site. Variable weight
+     300-800 with a slant axis standing in for italics. */
+  --sans:  "Recursive", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+           Roboto, "Helvetica Neue", Arial, sans-serif;
   --serif: "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia,
            "Nimbus Roman", "Liberation Serif", serif;
-  --sans:  ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-           "Helvetica Neue", Arial, sans-serif;
 
-  /* Roles. The whole site is monospace — a deliberate terminal aesthetic.
-     Set --body back to var(--serif) for proportional running prose. */
-  --body:    var(--mono);
+  /* Roles. Chrome, headings and code are the terminal face; running prose is
+     proportional so the long write-ups keep their words per line.
+     --body accepts var(--mono) for full terminal, or var(--serif). */
+  --body:    var(--sans);
   --heading: var(--mono);
   --ui:      var(--mono);
 
-  --measure: 68ch;      /* in a mono face, exactly 68 characters */
+  --measure: 66ch;      /* prose line length */
   --wide:    58rem;     /* full container */
   --gutter:  1.25rem;
 
   --step--1: 0.875rem;
-  --step-0:  1rem;
+  --step-0:  1.0625rem;
   --step-1:  1.3rem;
   --step-2:  1.65rem;
   --step-3:  2rem;
@@ -84,7 +88,7 @@ body {
   color: var(--ink);
   font-family: var(--body);
   font-size: var(--step-0);
-  line-height: 1.75;
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
   display: flex;
   flex-direction: column;
@@ -172,7 +176,7 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 }
 .eyebrow a { color: inherit; text-decoration: none; }
 .eyebrow a:hover { color: var(--accent); }
-.lede { font-family: var(--body); font-size: var(--step-1); color: var(--ink-muted); line-height: 1.55; }
+.lede { font-family: var(--body); font-size: var(--step-1); color: var(--ink-muted); line-height: 1.5; }
 
 /* --- Home ----------------------------------------------------------------- */
 .hero { padding-block: var(--space-4) var(--space-5); max-width: var(--measure); }
@@ -282,7 +286,7 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 }
 
 /* --- Code ----------------------------------------------------------------- */
-code, kbd, samp, pre { font-family: var(--mono); font-size: 0.9em; }
+code, kbd, samp, pre { font-family: var(--mono); font-size: 0.875em; }
 :not(pre) > code {
   background: var(--bg-sunk); padding: 0.12em 0.35em; border-radius: 3px;
   color: var(--ink); word-break: break-word;
