@@ -16,12 +16,22 @@
   --accent-soft: #e2f0ee;
   --select:    #d8ece9;
 
+  /* JetBrains Mono — the kitty terminal face, unpatched (the Nerd Font icon
+     glyphs are terminal-only and would cost megabytes here). */
+  --mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+           Consolas, "Liberation Mono", monospace;
   --serif: "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia,
            "Nimbus Roman", "Liberation Serif", serif;
   --sans:  ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
            "Helvetica Neue", Arial, sans-serif;
-  --mono:  ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono", Menlo,
-           Consolas, "Liberation Mono", monospace;
+
+  /* Roles. Interface chrome and headings are monospace; running prose is not,
+     because monospace costs ~30% of the words per line and flattens the
+     italic/bold hierarchy over a long read.
+     To go full terminal, set --body and --heading to var(--mono). */
+  --body:    var(--serif);
+  --heading: var(--mono);
+  --ui:      var(--mono);
 
   --measure: 66ch;      /* prose line length */
   --wide:    58rem;     /* full container */
@@ -31,8 +41,8 @@
   --step-0:  1.0625rem;
   --step-1:  1.3rem;
   --step-2:  1.65rem;
-  --step-3:  2.2rem;
-  --step-4:  2.9rem;
+  --step-3:  2rem;
+  --step-4:  2.5rem;
 
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -74,7 +84,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--body);
   font-size: var(--step-0);
   line-height: 1.7;
   text-rendering: optimizeLegibility;
@@ -92,10 +102,10 @@ a:hover { text-decoration-thickness: 2px; }
   border-radius: 2px;
 }
 
-h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.22; font-weight: 600; text-wrap: balance; }
-h1 { font-size: var(--step-4); letter-spacing: -0.02em; }
-h2 { font-size: var(--step-2); letter-spacing: -0.01em; }
-h3 { font-size: var(--step-1); }
+h1, h2, h3, h4 { font-family: var(--heading); line-height: 1.25; font-weight: 700; text-wrap: balance; }
+h1 { font-size: var(--step-4); letter-spacing: -0.04em; }
+h2 { font-size: var(--step-2); letter-spacing: -0.03em; }
+h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 
 .skip-link {
   position: absolute; left: -9999px; top: 0;
@@ -120,12 +130,12 @@ h3 { font-size: var(--step-1); }
   gap: var(--space-2); min-height: 4rem;
 }
 .site-name {
-  font-size: var(--step-0); font-weight: 600; letter-spacing: -0.01em;
+  font-family: var(--ui); font-size: var(--step-0); font-weight: 700; letter-spacing: -0.03em;
   color: var(--ink); text-decoration: none;
 }
 .site-name:hover { color: var(--accent); }
 
-.site-nav { display: flex; gap: var(--space-3); font-family: var(--sans); font-size: var(--step--1); }
+.site-nav { display: flex; gap: var(--space-3); font-family: var(--ui); font-size: var(--step--1); }
 .site-nav a { color: var(--ink-muted); text-decoration: none; padding-block: 0.25rem; }
 .site-nav a:hover { color: var(--ink); }
 .site-nav a[aria-current="page"] { color: var(--accent); box-shadow: inset 0 -1px 0 0 var(--accent); }
@@ -159,12 +169,12 @@ h3 { font-size: var(--step-1); }
 .page-head { margin-bottom: var(--space-4); }
 .page-head h1 { margin-bottom: var(--space-2); }
 .eyebrow {
-  font-family: var(--sans); font-size: var(--step--1); letter-spacing: 0.08em;
+  font-family: var(--ui); font-size: var(--step--1); letter-spacing: 0.06em;
   text-transform: uppercase; color: var(--ink-faint); margin-bottom: var(--space-1);
 }
 .eyebrow a { color: inherit; text-decoration: none; }
 .eyebrow a:hover { color: var(--accent); }
-.lede { font-size: var(--step-1); color: var(--ink-muted); line-height: 1.5; }
+.lede { font-family: var(--body); font-size: var(--step-1); color: var(--ink-muted); line-height: 1.5; }
 
 /* --- Home ----------------------------------------------------------------- */
 .hero { padding-block: var(--space-4) var(--space-5); max-width: var(--measure); }
@@ -180,8 +190,8 @@ h3 { font-size: var(--step-1); }
 
 .section { padding-block: var(--space-4); border-top: 1px solid var(--rule); }
 .section-title {
-  font-family: var(--sans); font-size: var(--step--1); font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint);
+  font-family: var(--ui); font-size: var(--step--1); font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint);
   margin-bottom: var(--space-3);
 }
 
@@ -192,20 +202,20 @@ h3 { font-size: var(--step-1); }
 .entry-link { display: block; text-decoration: none; color: inherit; }
 .entry-title { font-size: var(--step-1); margin-bottom: 0.35rem; transition: color 0.15s ease; }
 .entry-link:hover .entry-title { color: var(--accent); }
-.entry-summary { color: var(--ink-muted); }
+.entry-summary { font-family: var(--body); color: var(--ink-muted); }
 .entry-meta {
   display: flex; flex-wrap: wrap; gap: var(--space-1) 0.75rem; align-items: center;
-  margin-top: 0.6rem; font-family: var(--sans); font-size: var(--step--1);
+  margin-top: 0.6rem; font-family: var(--ui); font-size: var(--step--1);
   color: var(--ink-faint);
 }
 
 .tag {
-  font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.04em;
+  font-family: var(--ui); font-size: 0.75rem; letter-spacing: 0.04em;
   padding: 0.1rem 0.5rem; margin-right: 0.35rem; border-radius: 999px;
   background: var(--accent-soft); color: var(--accent);
 }
 
-.more { margin-top: var(--space-3); font-family: var(--sans); font-size: var(--step--1); }
+.more { margin-top: var(--space-3); font-family: var(--ui); font-size: var(--step--1); }
 
 /* --- Prose ---------------------------------------------------------------- */
 .prose > p, .prose > ul, .prose > ol, .prose > blockquote, .prose > dl { margin-bottom: var(--space-2); }
@@ -225,7 +235,7 @@ h3 { font-size: var(--step-1); }
 
 .prose table {
   width: 100%; border-collapse: collapse; margin-bottom: var(--space-3);
-  font-size: var(--step--1); font-family: var(--sans);
+  font-size: var(--step--1); font-family: var(--ui);
 }
 .prose th, .prose td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--rule); }
 .prose th { color: var(--ink-faint); font-weight: 600; letter-spacing: 0.02em; }
@@ -234,7 +244,7 @@ h3 { font-size: var(--step-1); }
 .toc {
   background: var(--bg-sunk); border-radius: 4px;
   padding: var(--space-2) var(--space-3); margin-bottom: var(--space-4);
-  font-family: var(--sans); font-size: var(--step--1);
+  font-family: var(--ui); font-size: var(--step--1);
 }
 .toc-title {
   font-size: var(--step--1); font-weight: 600; letter-spacing: 0.08em;
@@ -249,14 +259,14 @@ h3 { font-size: var(--step-1); }
 /* --- Project meta --------------------------------------------------------- */
 .meta {
   display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2);
-  margin-top: var(--space-2); font-family: var(--sans); font-size: var(--step--1);
+  margin-top: var(--space-2); font-family: var(--ui); font-size: var(--step--1);
   color: var(--ink-faint);
 }
 .meta-link { text-decoration: none; }
 .meta-link:hover { text-decoration: underline; }
 .page-nav {
   margin-top: var(--space-5); padding-top: var(--space-2); border-top: 1px solid var(--rule);
-  font-family: var(--sans); font-size: var(--step--1);
+  font-family: var(--ui); font-size: var(--step--1);
 }
 .page-nav a { text-decoration: none; }
 .page-nav a:hover { text-decoration: underline; }
@@ -265,7 +275,7 @@ h3 { font-size: var(--step-1); }
 .figure { margin-block: var(--space-3); }
 .figure img { width: 100%; border-radius: 3px; background: var(--bg-sunk); }
 .figure figcaption {
-  margin-top: 0.6rem; font-family: var(--sans); font-size: var(--step--1);
+  margin-top: 0.6rem; font-family: var(--ui); font-size: var(--step--1);
   color: var(--ink-faint); line-height: 1.5;
 }
 /* Break out of the prose measure, up to the container width. */
@@ -274,7 +284,7 @@ h3 { font-size: var(--step-1); }
 }
 
 /* --- Code ----------------------------------------------------------------- */
-code, kbd, samp, pre { font-family: var(--mono); font-size: 0.875em; }
+code, kbd, samp, pre { font-family: var(--mono); font-size: 0.85em; }
 :not(pre) > code {
   background: var(--bg-sunk); padding: 0.12em 0.35em; border-radius: 3px;
   color: var(--ink); word-break: break-word;
@@ -313,7 +323,7 @@ code, kbd, samp, pre { font-family: var(--mono); font-size: 0.875em; }
 .footer-inner {
   display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center;
   justify-content: space-between;
-  font-family: var(--sans); font-size: var(--step--1); color: var(--ink-faint);
+  font-family: var(--ui); font-size: var(--step--1); color: var(--ink-faint);
 }
 .social { display: flex; gap: var(--space-2); }
 .social a {
