@@ -35,9 +35,9 @@ team builds it.
 ## Where I have done this
 
 - **Zak-OTFS** — novel delay-Doppler waveform based PHY design.
-  - End-to-end model in MATLAB, with performance simulated over TDL channels.
-  - Linear-complexity equalizer, designed to stay implementable — the differentiator in
-    systems this complex.
+  - End-to-end model in MATLAB at around **1 MHz** bandwidth, with performance simulated
+    over TDL channels.
+  - Linear-complexity equalizer, designed to stay implementable.
   - Ettus **E320** driven directly from MATLAB, for over-the-air experiments.
   - System-level validation now in progress: link budget, power-amplifier nonlinearity
     and in-band distortion, and a channel emulator.
