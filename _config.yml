@@ -51,7 +51,6 @@ kramdown:
 plugins:
   - jekyll-sitemap   # /sitemap.xml
   - jekyll-feed      # Atom feed of the write-ups
-  - jekyll-redirect-from   # keeps the old /projects/ and /consulting/ URLs alive
 
 # There are no _posts, so the default /feed.xml would be empty. The write-ups
 # live in the ideas collection and get their own feed path.

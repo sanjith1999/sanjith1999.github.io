@@ -2,8 +2,6 @@
 title: Work with me
 permalink: /work/
 subtitle: Contract work on physical-layer communication systems.
-redirect_from:
-  - /consulting/
 ---
 
 I build physical-layer communication systems — satellite and HF modems, spread-spectrum
