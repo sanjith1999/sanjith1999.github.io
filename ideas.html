@@ -1,0 +1,24 @@
+---
+layout: default
+title: Ideas
+permalink: /ideas/
+redirect_from:
+  - /projects/
+---
+<div class="wrap prose">
+  <header class="page-head">
+    <h1>Ideas</h1>
+    <p class="lede">Write-ups and things I have built, newest first.</p>
+  </header>
+
+  {%- assign all = site.ideas | sort: "date" | reverse -%}
+  {%- if all.size > 0 %}
+  <ul class="entries">
+    {%- for idea in all -%}
+      {% include idea-card.html idea=idea %}
+    {%- endfor -%}
+  </ul>
+  {%- else %}
+  <p>Nothing published yet.</p>
+  {%- endif %}
+</div>

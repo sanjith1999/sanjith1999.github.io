@@ -1,7 +1,7 @@
 ---
 title: About
 permalink: /about/
-subtitle: Physical-layer engineering, and the projects that come out of it.
+subtitle: Physical-layer engineering, and the ideas that come out of it.
 ---
 
 I work on the PHY layer of advanced communication systems. In practice that means

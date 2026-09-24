@@ -10,6 +10,8 @@ tags: [robotics, embedded, control, firmware]
 repo: https://github.com/sanjith1999/SINDiB-MicroMouse
 math: true
 toc: true
+redirect_from:
+  - /projects/micromouse/
 ---
 
 Last December I had the opportunity to lead a team designing a micro-mouse for

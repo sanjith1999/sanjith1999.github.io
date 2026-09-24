@@ -29,20 +29,20 @@ title: Home
       </p>
       <p>
         I also take on a small amount of contract work —
-        <a href="{{ '/consulting/' | relative_url }}">what that looks like</a>.
+        <a href="{{ '/work/' | relative_url }}">what that looks like</a>.
       </p>
     </div>
   </section>
 
-  <section class="section" id="work">
-    <h2 class="section-title">Selected work</h2>
-    {%- assign recent = site.projects | sort: "date" | reverse -%}
+  <section class="section" id="ideas">
+    <h2 class="section-title">Recent ideas</h2>
+    {%- assign recent = site.ideas | sort: "date" | reverse -%}
     <ul class="entries">
-      {%- for project in recent limit: 3 -%}
-        {% include project-card.html project=project %}
+      {%- for idea in recent limit: 3 -%}
+        {% include idea-card.html idea=idea %}
       {%- endfor -%}
     </ul>
-    <p class="more"><a href="{{ '/projects/' | relative_url }}">All work →</a></p>
+    <p class="more"><a href="{{ '/ideas/' | relative_url }}">All ideas →</a></p>
   </section>
 
   <section class="section" id="contact">

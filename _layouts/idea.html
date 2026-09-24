@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="wrap prose project"{% if page.figure_width %} style="--figure-width: {{ page.figure_width }}"{% endif %}>
   <header class="page-head">
-    <p class="eyebrow"><a href="{{ '/projects/' | relative_url }}">Work</a></p>
+    <p class="eyebrow"><a href="{{ '/ideas/' | relative_url }}">Ideas</a></p>
     <h1>{{ page.title }}</h1>
     {%- if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
 
@@ -41,6 +41,6 @@ layout: default
   {{ content }}
 
   <nav class="page-nav">
-    <a href="{{ '/projects/' | relative_url }}">← All work</a>
+    <a href="{{ '/ideas/' | relative_url }}">← All ideas</a>
   </nav>
 </article>

@@ -15,9 +15,9 @@ author:
 
 # Content -------------------------------------------------------------------
 collections:
-  projects:
+  ideas:
     output: true
-    permalink: /projects/:name/
+    permalink: /ideas/:name/
 
 # Later entries win when several scopes match, so the collection default
 # must come after the site-wide one.
@@ -28,9 +28,9 @@ defaults:
       layout: page
   - scope:
       path: ""
-      type: projects
+      type: ideas
     values:
-      layout: project
+      layout: idea
       toc: true
 
 # Build ---------------------------------------------------------------------
@@ -51,13 +51,14 @@ kramdown:
 plugins:
   - jekyll-sitemap   # /sitemap.xml
   - jekyll-feed      # Atom feed of the write-ups
+  - jekyll-redirect-from   # keeps the old /projects/ and /consulting/ URLs alive
 
 # There are no _posts, so the default /feed.xml would be empty. The write-ups
-# live in the projects collection and get their own feed path.
+# live in the ideas collection and get their own feed path.
 feed:
   collections:
-    projects:
-      path: /projects/feed.xml
+    ideas:
+      path: /ideas/feed.xml
 
 sass:
   style: compressed

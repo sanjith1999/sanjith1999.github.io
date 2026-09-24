@@ -6,6 +6,8 @@ tags: [control, robotics, embedded]
 repo: https://github.com/sanjith1999/TIKIRI_MOLE_EN2532
 math: true
 toc: true
+redirect_from:
+  - /projects/pid-controller/
 figure_width: 58%
 ---
 

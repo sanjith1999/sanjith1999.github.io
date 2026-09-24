@@ -1,15 +1,15 @@
 # sanjith1999.github.io
 
-Personal site — portfolio and write-ups. Static, built by GitHub Pages from Markdown.
+Personal site — write-ups, and contract work. Static, built by GitHub Pages from Markdown.
 
 **Live:** https://sanjith1999.github.io
 
-## Adding a project
+## Adding an idea
 
 One file:
 
 ```bash
-touch _projects/my-project.md
+touch _ideas/my-idea.md
 ```
 
 ```markdown
@@ -32,7 +32,7 @@ Write the body in Markdown.
 ```
 
 Put its images in `assets/images/my-project/`, commit, push. GitHub rebuilds the site.
-Nothing else needs editing — the home page and `/projects/` pick it up automatically,
+Nothing else needs editing — the home page and `/ideas/` pick it up automatically,
 sorted by `date`.
 
 ### Figures
@@ -72,13 +72,13 @@ is involved.
 ```text
 _config.yml       site settings
 _data/social.yml  footer links, edited in one place
-_includes/        head, header, footer, figure, icon, project-card
-_layouts/         default → page | project
-_projects/        one Markdown file per project
+_includes/        head, header, footer, figure, icon, idea-card
+_layouts/         default → page | idea
+_ideas/           one Markdown file per idea
 assets/css/       main.css — the only stylesheet
 assets/js/        main.js — nav toggle and hero tagline, both optional
 plan/             roadmap.md and history.md
-index.html  projects.html  about.md  contact.md  404.html
+index.html  ideas.html  work.md  about.md  contact.md  404.html
 ```
 
 ## Local preview (optional)
