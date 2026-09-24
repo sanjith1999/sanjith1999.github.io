@@ -13,8 +13,8 @@ expensive to get wrong, and the handovers between stages where most of the cost 
 
 ## What I take on
 
-- **Algorithm design** — detection, synchronisation and equalization, validated for
-  performance against the requirements they have to meet.
+- **Algorithm design** — validated for performance against the requirements it has to
+  meet.
 - **Fixed-point conversion** — floating-point models mapped to fixed point, with the
   strategy chosen for the hardware and the performance cost measured and kept small.
 - **RTL implementation** — VHDL written to be debugged, and to still make sense to
@@ -24,10 +24,7 @@ expensive to get wrong, and the handovers between stages where most of the cost 
 - **Consulting and mentorship** — helping your engineers build systems they can carry
   on without me.
 
-Any one of those works on its own — a fixed-point model handed to your RTL team, a
-feasibility review before you commit to a part, a single block to specification. Where I
-am worth most is across the whole path: one person holding the design together while your
-team builds it.
+Any one of those works on its own.
 
 ## Where I have done this
 
