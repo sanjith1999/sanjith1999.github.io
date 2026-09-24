@@ -4,12 +4,14 @@ permalink: /work/
 subtitle: Algorithms that have to run in real time, on real hardware.
 ---
 
-I build high-speed physical-layer systems — the kind that live or die on their signal
-processing — and take them from the first conversation about requirements through to
-hardware that works.
+I work on high-speed physical-layer systems — the kind that live or die on their signal
+processing.
 
-What I prefer is to own that whole path, because most of the cost in these projects hides
-in the handovers between its stages.
+A system like that is more than one person's work. What I bring is the design of the
+signal-processing core, and the technical lead to carry your engineers through the rest:
+the architecture, the decisions that are expensive to get wrong, and the review that
+keeps each stage honest against the one before it. Most of the cost in these projects
+hides in the handovers between those stages, and that is the seam I am there to hold.
 
 ## What I take on
 
@@ -21,10 +23,14 @@ in the handovers between its stages.
   inside the timing and resource budget you actually have.
 - **Hardware** — bring-up and debug on the board, data movement between processor and
   fabric, drivers, and the C or C++ that sits on top.
+- **Technical leadership** — setting the architecture, dividing the work across your
+  team, reviewing what comes back, and mentoring the engineers who will own it after I
+  am gone.
 
 Any one of those works on its own — a fixed-point model handed to your RTL team, a
-feasibility review before you commit to a part, a single block to specification. What I
-add is worth most carried across all four.
+feasibility review before you commit to a part, a single block to specification. Where I
+am worth most is across the whole path: one person holding the design together while your
+team builds it.
 
 ## Where I have done this
 
