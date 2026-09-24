@@ -15,27 +15,6 @@ title: Home
     </p>
   </section>
 
-  <section class="section" id="about">
-    <h2 class="section-title">About</h2>
-    <div class="prose">
-      <p>
-        I work on the PHY layer of advanced communication systems, across the whole
-        pipeline: system design, MATLAB modelling, RTL development and hardware
-        deployment. Owning a design end to end is what taught me to hold both the
-        technical detail and the architectural view at once.
-      </p>
-      <p>
-        Outside that, most of my time goes to small hardware projects — robots,
-        controllers, signal-processing experiments — and to writing them down properly.
-        <a href="{{ '/about/' | relative_url }}">More about me →</a>
-      </p>
-      <p>
-        I also take on a small amount of contract work —
-        <a href="{{ '/work/' | relative_url }}">what that looks like</a>.
-      </p>
-    </div>
-  </section>
-
   <section class="section" id="ideas">
     <h2 class="section-title">Recent ideas</h2>
     {%- assign recent = site.ideas | sort: "date" | reverse -%}
@@ -50,7 +29,10 @@ title: Home
   <section class="section" id="contact">
     <h2 class="section-title">Contact</h2>
     <div class="prose">
-      <p>Open to interesting problems and good conversation.</p>
+      <p>
+        Open to interesting problems and good conversation, and I take on a small amount
+        of <a href="{{ '/work/' | relative_url }}">contract work</a>.
+      </p>
       <p class="contact-email">
         <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
       </p>
