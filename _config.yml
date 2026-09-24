@@ -50,12 +50,14 @@ kramdown:
 
 plugins:
   - jekyll-sitemap   # /sitemap.xml
-  - jekyll-feed      # /feed.xml for the write-ups
+  - jekyll-feed      # Atom feed of the write-ups
 
+# There are no _posts, so the default /feed.xml would be empty. The write-ups
+# live in the projects collection and get their own feed path.
 feed:
   collections:
     projects:
-      path: /feed.xml
+      path: /projects/feed.xml
 
 sass:
   style: compressed
