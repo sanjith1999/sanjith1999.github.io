@@ -22,3 +22,12 @@ block, and the distance between them is where most of the engineering actually l
   verification data.
 - **Embedded** — microcontroller firmware, sensors and control loops, which is where
   most of my side projects begin.
+
+## Getting in touch
+
+The fastest way to reach me is email.
+
+<p class="contact-email"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+
+You will also find me on [GitHub](https://github.com/sanjith1999) and
+[LinkedIn](https://www.linkedin.com/in/sanjith-shanmugathashan-1377571b8/).

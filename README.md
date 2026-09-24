@@ -78,7 +78,7 @@ _ideas/           one Markdown file per idea
 assets/css/       main.css — the only stylesheet
 assets/js/        main.js — nav toggle and hero tagline, both optional
 plan/             roadmap.md and history.md
-index.html  ideas.html  work.md  about.md  contact.md  404.html
+index.html  ideas.html  work.md  about.md  404.html
 ```
 
 ## Local preview (optional)
