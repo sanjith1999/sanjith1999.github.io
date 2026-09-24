@@ -281,7 +281,10 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 .page-nav a:hover { text-decoration: underline; }
 
 /* --- Timeline ------------------------------------------------------------- */
-.timeline { list-style: none; padding: 0; margin: var(--space-3) 0 0; position: relative; }
+.timeline,
+.prose > ol.timeline {
+  list-style: none; padding: 0; margin: var(--space-3) 0 0; position: relative;
+}
 /* The rule runs between the first and last markers, not past them. */
 .timeline::before {
   content: ""; position: absolute; left: 4px; top: 0.7em; bottom: 0.7em;
