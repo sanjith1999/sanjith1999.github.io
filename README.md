@@ -22,6 +22,8 @@ cover_alt: Description for screen readers
 cover_caption: Shown under the cover image.
 tags: [fpga, dsp]
 repo: https://github.com/sanjith1999/my-project
+article: https://medium.com/...   # optional: link back to an original post
+link: https://example.com        # optional: a live demo
 math: true    # only loads KaTeX where it is needed
 toc: true     # table of contents built from the ## headings
 ---

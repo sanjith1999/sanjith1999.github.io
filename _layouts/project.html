@@ -13,6 +13,7 @@ layout: default
       <span class="tags">{% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</span>
       {%- endif %}
       {%- if page.repo %}<a class="meta-link" href="{{ page.repo }}" target="_blank" rel="noopener">Source ↗</a>{% endif %}
+      {%- if page.article %}<a class="meta-link" href="{{ page.article }}" target="_blank" rel="noopener">Original article ↗</a>{% endif %}
       {%- if page.link %}<a class="meta-link" href="{{ page.link }}" target="_blank" rel="noopener">Live ↗</a>{% endif %}
     </p>
   </header>
