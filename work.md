@@ -43,17 +43,13 @@ team builds it.
     and in-band distortion, and a channel emulator.
 
 - **DVB-RCS2** based secure communication system — assisted at system level.
-  - Modulator and demodulator architecture for **32+ waveforms** and frequency-hopped
-    streams; carrier recovery and turbo FEC designed in house, the rest split across the
-    team.
-  - **80 MSym/s** demodulation, **100 Mb/s** output, under **50 µs** modulator latency,
-    backpressure end to end.
-  - Burst detector on DDR-backed deep buffering; acquisition and synchronisation at
-    negative SNR, on the order of **−10 dB**.
-  - RTL jammer detector to **30 dB JSR** at **120 MSa/s** with per-hop metrics reported
-    upward, and the **DVB-S2** forward-link AGC holding gain against the same.
-  - Receive front end resampling **491.52 MSa/s** to any rate from **0.5 to 120 MSa/s**;
-    PS–PL data movement sustaining **758 Mb/s**.
+  - Owned the modulator and demodulator architecture through to implementation,
+    supporting **32+ waveforms** and frequency-hopped streams — carrier recovery and
+    turbo FEC designed in house, the remaining blocks split across the team.
+  - Brought the burst detector up on DDR-backed deep buffering, taking acquisition and
+    synchronisation to negative SNR, on the order of **−10 dB**.
+  - Designed the RTL jammer detector for protected waveforms, supporting up to
+    **30 dB JSR**, with per-hop metrics reported to higher layers.
 
 - **MIL-STD-188-110B** — feedback Kalman equalizer for an HF modem.
   - Modelled in MATLAB over Watterson-fading channels, benchmarked against the standard.
