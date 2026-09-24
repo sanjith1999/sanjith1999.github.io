@@ -34,22 +34,29 @@ team builds it.
 
 ## Where I have done this
 
-- Helping build module-level capability around **Zak-OTFS**, a novel delay-Doppler
-  waveform. I built the end-to-end model in MATLAB and simulated its performance over
-  TDL channels, concentrating on a **linear-complexity equalizer** — the differentiator
-  in systems this complex, where the obvious equalizer is the one you cannot afford.
-  Then drove an **Ettus E320** straight from MATLAB to take the chain over the air. I am
-  now on the system-level questions: link budget, power-amplifier nonlinearity and the
-  in-band distortion it introduces, and validation against a channel emulator.
-- A feedback **Kalman equalizer** for an HF modem to **MIL-STD-188-110B**, over
-  Watterson-fading channels: MATLAB model first, then C++ on an Arm Cortex-A53,
-  validated against the MATLAB vectors.
-- A **DVB-RCS2** satellite communication modem — modulator and demodulator for **32+
-  waveforms** of differing size, at sampling rates from a fraction of a MHz up to the
-  order of 100 MSa/s, pulling in carrier frequency offsets of a few kHz.
-- The spread-spectrum and protected waveforms alongside it: burst detection,
-  acquisition and synchronisation at negative SNR, on the order of **−10 dB**, and
-  jammer detection holding up to **30 dB JSR**.
+1. **Zak-OTFS** — helping build module-level capability around a novel delay-Doppler
+   waveform.
+   - An end-to-end model in MATLAB, with performance simulated over TDL channels.
+   - A **linear-complexity equalizer** — the differentiator in systems this complex,
+     where the obvious equalizer is the one you cannot afford.
+   - An **Ettus E320** driven straight from MATLAB, to take the chain over the air.
+   - Now on the system-level questions: link budget, power-amplifier nonlinearity and
+     the in-band distortion it introduces, and validation against a channel emulator.
+
+2. **HF modem to MIL-STD-188-110B** — a feedback Kalman equalizer.
+   - Modelled in MATLAB over Watterson-fading channels and benchmarked against the
+     figures in the standard.
+   - Implemented in C++ on an Arm Cortex-A53 and validated against the MATLAB vectors.
+
+3. **DVB-RCS2 satellite communication modem** — modulator and demodulator.
+   - **32+ waveforms** of differing size.
+   - Sampling rates from a fraction of a MHz up to the order of 100 MSa/s.
+   - Carrier frequency offsets of a few kHz, pulled in and tracked.
+
+4. **Spread-spectrum and protected waveforms** — the anti-jam side of the same system.
+   - Burst detection, acquisition and synchronisation at negative SNR, on the order of
+     **−10 dB**.
+   - Jammer detection holding up to **30 dB JSR**.
 
 Day to day that means MATLAB, VHDL, C and C++, Vivado, and PetaLinux on the processor
 side.
