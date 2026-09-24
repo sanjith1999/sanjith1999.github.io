@@ -51,9 +51,14 @@ team builds it.
   - Designed the RTL jammer detector for protected waveforms, supporting up to
     **30 dB JSR**, with per-hop metrics reported to higher layers.
 
-- **MIL-STD-188-110B** — feedback Kalman equalizer for an HF modem.
-  - Modelled in MATLAB over Watterson-fading channels, benchmarked against the standard.
-  - Implemented in C++ on an Arm Cortex-A53, validated against the MATLAB vectors.
+- **Feedback Kalman equalizer** — secure communication system based on
+  **MIL-STD-188-110B**.
+  - Did the original design and simulated it against Watterson-fading channels, tuning
+    it to hit the figures given in the standard.
+  - Converted it to a fixed-point model to make it implementable, and validated the
+    performance that model gives.
+  - Implemented it in C++ on an **Arm Cortex-A53**, supporting PS-based modem
+    development.
 
 Day to day that means MATLAB, VHDL, C and C++, Vivado, and PetaLinux on the processor
 side.
