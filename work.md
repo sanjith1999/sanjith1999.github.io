@@ -34,10 +34,13 @@ team builds it.
 
 ## Where I have done this
 
-- An end-to-end **Zak-OTFS** model in MATLAB, over TDL channels, with a
-  linear-complexity equalizer designed to stay implementable — acquisition from the
-  energy peak on the delay-Doppler grid, blind detection, and performance verified
-  against the channel model before it went over the air on USRP hardware.
+- Helping build module-level capability around **Zak-OTFS**, a novel delay-Doppler
+  waveform. I built the end-to-end model in MATLAB and simulated its performance over
+  TDL channels, concentrating on a **linear-complexity equalizer** — the differentiator
+  in systems this complex, where the obvious equalizer is the one you cannot afford.
+  Then drove an **Ettus E320** straight from MATLAB to take the chain over the air. I am
+  now on the system-level questions: link budget, power-amplifier nonlinearity and the
+  in-band distortion it introduces, and validation against a channel emulator.
 - A feedback **Kalman equalizer** for an HF modem to **MIL-STD-188-110B**, over
   Watterson-fading channels: MATLAB model first, then C++ on an Arm Cortex-A53,
   validated against the MATLAB vectors.
