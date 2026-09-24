@@ -2,7 +2,8 @@
 
 A personal portfolio and writing site, rebuilt to be simple enough to maintain alone.
 
-Status: live at https://sanjith1999.github.io — Phases 0–5 done. Phase 6 is optional.
+Status: live at https://sanjith1999.github.io — Phases 0–5 done, plus a consulting
+presence (Phase 7). Phase 6 items remain optional.
 Last updated: 2026-09-20
 
 ---
@@ -130,6 +131,7 @@ GitBlog/
 | `/projects/<slug>/` | `_projects/<slug>.md` | Full write-up |
 | `/about/` | `about.md` | The longer version |
 | `/contact/` | `contact.md` | How to reach me |
+| `/consulting/` | `consulting.md` | Contract work: what I take on, and evidence |
 | `/404.html` | `404.html` | Not-found page |
 
 About and Contact became their own pages rather than home-page sections only: the home
@@ -235,3 +237,38 @@ GitHub builds and deploys. No server, no login, no editor.
   images resized before committing (target < 300 KB each).
 - **Browser support:** current Chrome, Firefox, Safari and Edge. No polyfills.
 - **No analytics or third-party trackers.**
+
+---
+
+## 10. Purpose (added 2026-09-24)
+
+The site serves two purposes, in this order of visibility:
+
+1. **Share ideas well.** The write-ups are the point, and the reason anyone stays.
+2. **Make it plain that Sanjith takes contract work** on physical-layer communication
+   systems.
+
+The second must never crowd out the first. The agreed footprint is exactly one page
+(`/consulting/`), one sentence on the home page, and one line on `/contact/`. There are
+no banners, rates, testimonials, logos or calls-to-action anywhere, and adding one is a
+decision to revisit this section, not a detail.
+
+### Two rules that govern the consulting copy
+
+- **Standards yes, employer no.** DVB-RCS2, DVB-S2, MIL-STD-188-110B, Zak-OTFS and the
+  performance figures are named. The employer is not, anywhere in the repo.
+- **Work done, not clients served.** That work was done in employment. The copy says
+  what was built; it never implies an engagement history that does not exist.
+
+Every figure on `/consulting/` is copied from `content/facts.tex` in the CV repo
+(`~/Documents/latexDocs/work_resume`). If a number changes there, it changes here — and
+nothing may appear here that is not in that file. The three facts parked in the CV
+(ZU11EG, 40% modem footprint, 90% utilisation) are parked here too.
+
+### Evidence strategy
+
+Credibility comes from **demonstrated depth**, not claims: technical articles on subjects
+that can be discussed freely. Candidates, none written yet — burst detection at low SNR ·
+digital AGC with a double feedback loop · floating-point reference to fixed-point RTL ·
+a Zak-OTFS primer · PS–PL data movement and what limits throughput. Any one of these is
+worth more to a prospective client than the consulting page itself.

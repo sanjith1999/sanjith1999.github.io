@@ -13,6 +13,70 @@ What changed, why, and what it means for the next step.
 
 ---
 
+## 2026-09-24 — Content pass, and a consulting presence
+**Phase:** post-launch · **Status:** done
+
+### Typography, settled
+
+Headings and interface chrome are JetBrains Mono, matching the kitty terminal face, via
+the unpatched Google Fonts build — the Nerd Font patch is icon glyphs a browser never
+needs, at megabytes. Running prose went mono for a while at Sanjith's request, then
+settled on **Recursive Sans**, which is proportional but drawn from a monospace design,
+so it sits beside JetBrains Mono without reading as a second site. Both families come in
+one Google Fonts request. Typeface roles are tokens — `--body`, `--heading`, `--ui` — so
+any of this is a one-line change.
+
+Layout followed: measure 66ch → 74ch, figures sized by a `--figure-width` token (80%
+site-wide, 58% on the PID page), with `width=` for a single figure and `cover_width` for
+a cover. The `wide` modifier now fills the column instead of breaking out past it.
+
+### Both write-ups replaced with the real articles
+
+Recovered from their original sources: the MicroMouse firmware article via the Medium
+**RSS feed** (the page itself 403s on any automated fetch), and the PID article from
+Blogspot directly.
+
+**This mattered more than filling gaps.** The scaffolded MicroMouse page I had written
+described **PID control with integral windup clamping**; the actual design is **PD
+throughout**, with the I term dropped deliberately for stability. The PID page turned out
+to be about a different robot entirely — Tikiri-Mole — and about choosing error terms,
+not about implementing a controller. Placeholders that *looked* finished would have
+published both errors under Sanjith's name.
+
+Figures were mapped by opening every image rather than guessing from filenames, which is
+how `response.jpeg` got its real caption (phase boundaries at 0.5 ms and 0.8 ms are drawn
+on it). Of the PID article's seven images, only the three Miro diagrams are Sanjith's own
+and were re-hosted; the other four are third-party and were deliberately left out.
+**Open question:** `pid.jpeg`, carried over from the old repo, is likely third-party too.
+
+Original-source links were then removed from both, as those posts are being taken down.
+
+### Consulting presence
+
+The positioning session produced the rules now recorded in roadmap §10. Built: the
+`/consulting/` page, one sentence on the home page, one line on `/contact/`. The nav
+gained Consulting, and `/projects/` was relabelled **Writing** — its URL is unchanged, so
+nothing broke.
+
+Verified before pushing: no occurrence of the employer name anywhere in the repo, and
+every figure on the page cross-checked against `facts.tex` in the CV repo with LaTeX
+markup normalised. All nine matched; none of the three parked facts leaked.
+
+Added `jekyll-sitemap`, `jekyll-feed` and `robots.txt` — both plugins are on the GitHub
+Pages allowlist, so there is still no Actions workflow. The feed needed a second pass:
+with no `_posts`, jekyll-feed's default `/feed.xml` is empty and collided with the
+collection override, so the write-ups' feed lives at **`/projects/feed.xml`**, which is
+what the page header links to.
+
+### Still open
+
+- The `pid.jpeg` provenance question above.
+- Whether advertising consulting publicly sits well with Sanjith's current employment —
+  flagged during planning, his call.
+- Nothing written yet from the evidence list in roadmap §10.
+
+---
+
 ## 2026-09-20 — Typography: JetBrains Mono
 **Phase:** post-launch · **Status:** done
 
