@@ -1,10 +1,11 @@
 ---
 title: Firmware Design for a Micro-mouse
-summary: The implementation strategies behind our RoboFest-2023 micro-mouse — controller design, a 1 ms response budget, and the alignment tricks that keep it off the walls.
+summary: Controller design, a 1 ms response budget, and the alignment tricks that keep it off the walls.
 date: 2024-08-22
 cover: /assets/images/micromouse/mouse.jpeg
 cover_alt: The assembled micro-mouse, a round PCB with two wheels, an OLED display and IR sensors
 cover_caption: Our design for RoboFest-2023.
+cover_width: 82%
 tags: [robotics, embedded, control, firmware]
 repo: https://github.com/sanjith1999/SINDiB-MicroMouse
 math: true

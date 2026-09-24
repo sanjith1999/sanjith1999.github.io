@@ -19,7 +19,7 @@ layout: default
   </header>
 
   {%- if page.cover %}
-  {% include figure.html src=page.cover alt=page.cover_alt caption=page.cover_caption wide=true %}
+  {% if page.cover_width %}{% include figure.html src=page.cover alt=page.cover_alt caption=page.cover_caption width=page.cover_width %}{% else %}{% include figure.html src=page.cover alt=page.cover_alt caption=page.cover_caption wide=true %}{% endif %}
   {%- endif %}
 
   {%- comment -%} Table of contents, built from the rendered <h2>s. {%- endcomment -%}
