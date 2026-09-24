@@ -42,19 +42,17 @@ team builds it.
   - System-level validation now in progress: link budget, power-amplifier nonlinearity
     and in-band distortion, and a channel emulator.
 
+- **DVB-RCS2** based secure communication system — assisted at system level.
+  - Modulator and demodulator for **32+ waveforms** of differing size.
+  - Sampling rates from a fraction of a MHz up to the order of 100 MSa/s.
+  - Carrier frequency offsets of a few kHz, acquired and tracked.
+  - Spread-spectrum waveforms: burst detection, acquisition and synchronisation at
+    negative SNR, on the order of **−10 dB**.
+  - Jammer detection for protected waveforms, holding up to **30 dB JSR**.
+
 - **MIL-STD-188-110B** — feedback Kalman equalizer for an HF modem.
   - Modelled in MATLAB over Watterson-fading channels, benchmarked against the standard.
   - Implemented in C++ on an Arm Cortex-A53, validated against the MATLAB vectors.
-
-- **DVB-RCS2** — modulator and demodulator for a satellite communication modem.
-  - **32+ waveforms** of differing size.
-  - Sampling rates from a fraction of a MHz up to the order of 100 MSa/s.
-  - Carrier frequency offsets of a few kHz, acquired and tracked.
-
-- **Spread spectrum** — the anti-jam side of the same system.
-  - Burst detection, acquisition and synchronisation at negative SNR, on the order of
-    **−10 dB**.
-  - Jammer detection holding up to **30 dB JSR**.
 
 Day to day that means MATLAB, VHDL, C and C++, Vivado, and PetaLinux on the processor
 side.
