@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="wrap prose project">
+<article class="wrap prose project"{% if page.figure_width %} style="--figure-width: {{ page.figure_width }}"{% endif %}>
   <header class="page-head">
     <p class="eyebrow"><a href="{{ '/projects/' | relative_url }}">Work</a></p>
     <h1>{{ page.title }}</h1>

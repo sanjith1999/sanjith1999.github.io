@@ -6,11 +6,12 @@ tags: [control, robotics, embedded]
 repo: https://github.com/sanjith1999/TIKIRI_MOLE_EN2532
 math: true
 toc: true
+figure_width: 58%
 ---
 
 Our team Tikiri-Mole built a mobile robot able to follow lines, follow walls, detect
-objects, identify ball colours, and carry things with a pair of arms. This is a few of
-the moments I enjoyed while designing the algorithms for it.
+objects, identify ball colours, and carry things with a pair of arms. These are a few of
+the moments I enjoyed while designing its algorithms.
 
 You have almost certainly heard about the role of a PID controller in actuator design.
 What I want to focus on instead are the algorithms that need continuous monitoring of a
@@ -25,15 +26,14 @@ bring the state closer to that reference.
 
 Achieving such a state is rarely as easy as specifying the reference. Changing a variable
 abruptly produces a transient response, and there is a price to pay for it — the state
-can only be reached gradually. The figure above shows the parameters involved in a
-transient response to a unit step input: overshoot, rise time, settling time and
-steady-state error.
+can only be reached gradually. Four parameters describe that transient response to a
+unit step input: overshoot, rise time, settling time and steady-state error.
 
-The goal is to minimise all of them, by supplying a proper error signal at each cycle of
+The goal is to minimise all four, by supplying a proper error signal at each cycle of
 execution. The problem with using the plain difference as that signal is that it leaves
-only **one** degree of freedom — the amplification applied to the error. Make it too
-large and the response oscillates; make it too small and a significant steady-state error
-remains. This is where PID becomes useful.
+only **one** degree of freedom: the amplification applied to the error. Set it too high
+and the response oscillates; set it too low and a significant steady-state error remains.
+There is no value that fixes both. This is where PID becomes useful.
 
 {% include figure.html src="/assets/images/pid-controller/pid.jpeg"
    alt="Step response of a control system showing overshoot, rise time, delay, settling time and steady-state error, with underdamped, critically damped and overdamped curves"
@@ -90,12 +90,16 @@ $$
 e = (1)\cdot s_{\text{right}} + (0)\cdot s_{\text{front}} + (-1)\cdot s_{\text{left}}
 $$
 
-Turning the robot proportionally — right on a positive error, left on a negative one —
-does the job.
+The error is $$+1$$ when the robot has drifted left of the line, $$-1$$ when it has
+drifted right, and $$0$$ when it is centred. Turning the robot proportionally — right on a
+positive error, left on a negative one — does the job.
 
 {% include figure.html src="/assets/images/pid-controller/line-following.png"
    alt="Three cases of a robot's three downward IR sensors over a black line, with the sensor detecting the line marked in green"
-   caption="The green dot marks the sensor that currently sees the black line." %}
+   width="72%"
+   caption="The green dot marks the sensor that currently sees the line. Case 1 gives
+            $$e = -1$$ (turn left), case 2 gives $$e = 0$$, case 3 gives $$e = +1$$
+            (turn right)." %}
 
 The success of something this simple depends on the overshoot — which can throw the body
 of the robot clean off the line — and on delay in alignment, which walks it off the track
@@ -130,7 +134,8 @@ definitions for two more cases.
 
 {% include figure.html src="/assets/images/pid-controller/wall-following.jpg"
    alt="A robot angled relative to a wall, with distances d1 from the front corner and d2 from the rear corner marked"
-   caption="Two ultrasonic sensors, one at the front corner and one at the rear." %}
+   width="34%"
+   caption="Two ultrasonic sensors: $$d_1$$ at the front corner, $$d_2$$ at the rear." %}
 
 Here the robot has to hold the same distance from a wall throughout its journey, so it
 needs to know how far its nearest corners are from that wall. Two ultrasonic sensors — one
@@ -140,9 +145,10 @@ $$
 e = d_1 - d_2
 $$
 
-For the configuration in the figure, a positive error corresponds to the robot facing away
-from the wall, so the actuator should turn left on a positive error and right on a
-negative one, proportionally. Folding PID into that error makes the system more robust.
+For the configuration in the figure, a positive error means the front corner is further
+from the wall than the rear one — the robot is facing away from the wall — so the actuator
+should turn left on a positive error and right on a negative one, proportionally. Folding
+PID into that error makes the system more robust.
 
 > **Additional tip:** add a third ultrasonic sensor between the other two and refine the
 > error accordingly, and you can hold a *specified* distance from the wall.
@@ -159,7 +165,9 @@ approaches.
 
 {% include figure.html src="/assets/images/pid-controller/object-alignment.jpg"
    alt="Three cases of a robot approaching an object, with distances d1, d2 and d3 from three front sensors; in case III the object presents a corner"
-   caption="Case III is the exception — the object presents a corner rather than a face." %}
+   width="70%"
+   caption="Cases I and II are ordinary misalignment. Case III is the exception: the
+            object presents a corner, not a face." %}
 
 **Case III** above is the exception to this algorithm. It can be detected by comparing the
 three sensor readings; once it is, simply turn towards one side of the object and run the

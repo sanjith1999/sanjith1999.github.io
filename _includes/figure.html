@@ -4,8 +4,12 @@
                          alt="The assembled robot"
                          caption="The assembled robot, 90 × 80 mm."
                          wide=true %}
+
+  wide=true   fills the column (default is --figure-width, 80%)
+  width="45%" overrides both, for one figure
+  A page can shift its own default with `figure_width` in the front matter.
 {%- endcomment -%}
-<figure class="figure{% if include.wide %} figure--wide{% endif %}">
+<figure class="figure{% if include.wide %} figure--wide{% endif %}"{% if include.width %} style="width: {{ include.width }}"{% endif %}>
   <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy" decoding="async">
   {%- if include.caption %}
   <figcaption>{{ include.caption | markdownify | remove: '<p>' | remove: '</p>' }}</figcaption>
