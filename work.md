@@ -53,12 +53,10 @@ team builds it.
 
 - **Feedback Kalman equalizer** — secure communication system based on
   **MIL-STD-188-110B**.
-  - Did the original design and simulated it against Watterson-fading channels, tuning
-    it to hit the figures given in the standard.
-  - Converted it to a fixed-point model to make it implementable, and validated the
-    performance that model gives.
-  - Implemented it in C++ on an **Arm Cortex-A53**, supporting PS-based modem
-    development.
+  - Original design, simulated over Watterson-fading channels and tuned to the figures
+    in the standard.
+  - Fixed-point model for implementation, with the performance validated.
+  - C++ on an **Arm Cortex-A53**, supporting PS-based modem development.
 
 Day to day that means MATLAB, VHDL, C and C++, Vivado, and PetaLinux on the processor
 side.
