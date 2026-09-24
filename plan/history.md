@@ -13,6 +13,47 @@ What changed, why, and what it means for the next step.
 
 ---
 
+## 2026-09-24 — /work/ reframed around the end-to-end path
+**Phase:** post-launch · **Status:** done
+
+Also renamed the two sections: "Consulting" read like an agency, so the contract-work
+page became **Work with me** at `/work/`, and the write-ups became **Ideas** at
+`/ideas/` — Sanjith's own word, and what the old portfolio called them. The collection,
+layout and card include were renamed with them, so nothing in the repo says "projects"
+any more. Redirect stubs for the old URLs were added and then removed at his request:
+nothing links to them, so they 404, which is the honest answer. The only external
+reference is the CV header, which points at the site root.
+
+### The page itself
+
+The first version offered three separate services — algorithm→RTL delivery, architecture
+review, modelling. That reads as a menu of detached skills, which is not how Sanjith
+works. He takes a system from the requirements conversation to delivered hardware, and
+the value is in carrying it across the stages rather than in any one of them.
+
+Now structured as **four grouped stages** — Design · Model · RTL · Hardware — chosen over
+a seven-stage version that was thorough but turned the page into mostly list. The
+fixed-point step is called out as the one most often skipped and the one that decides
+whether the RTL matches the paper, which is the sharpest thing on the page.
+
+It states a preference for end-to-end work, then says plainly that any single stage works
+alone. That widens the door without weakening the pitch.
+
+Capabilities named, in his own framing: high-speed DSP for PHY systems on FPGA interfaced
+with Linux or bare-metal · detection, acquisition, synchronisation and equalization
+algorithm design · end-to-end MATLAB systems · fixed-point mapping · VHDL RTL · hardware
+bring-up and debug. Tooling is one sentence, deliberately, not a list.
+
+The evidence block and the "How I work" and "Getting in touch" sections were left alone.
+
+### Checks, unchanged from before and worth keeping
+
+Employer name absent from the whole repo; every figure cross-checked against
+`facts.tex` in the CV repo with LaTeX markup normalised (all seven match); none of the
+three parked facts leaked.
+
+---
+
 ## 2026-09-24 — Content pass, and a consulting presence
 **Phase:** post-launch · **Status:** done
 
