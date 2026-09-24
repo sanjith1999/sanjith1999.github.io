@@ -1,38 +1,30 @@
 ---
 title: Work with me
 permalink: /work/
-subtitle: High-speed DSP for physical-layer systems — algorithm, RTL, hardware.
+subtitle: Signal-processing systems, carried from requirements to working hardware.
 ---
 
-I build the signal-processing core of physical-layer communication systems: detection,
-synchronisation and equalization, carried through to high-throughput RTL on FPGA and the
-Linux or bare-metal software that drives it.
+I build high-speed physical-layer systems — the kind that live or die on their signal
+processing — and take them from the first conversation about requirements through to
+hardware that works.
 
-What I prefer is to own that whole path, from the requirements conversation to a
-delivered system — because in projects like these, most of the cost hides in the
-handovers between stages.
+What I prefer is to own that whole path, because most of the cost in these projects hides
+in the handovers between its stages.
 
-## The path I take a system down
+## What I take on
 
-1. **Design.** The requirements first: rates, latency, the channel it has to live in,
-   the device it has to fit on, and what "working" will mean when we test it. Then the
-   detection, acquisition, synchronisation and equalization algorithms to meet them —
-   designed with the implementation already in mind, because an elegant algorithm that
-   cannot be built is not a solution.
-2. **Model.** The whole chain in MATLAB, transmitter through channel to receiver, so
-   performance is measured rather than assumed. Then the fixed-point mapping: word
-   lengths, scaling, and the quantisation each block can absorb. This is the step most
-   often skipped, and the one that decides whether the RTL matches the paper.
-3. **RTL.** VHDL, written against the fixed-point model and verified to it, for the
-   device and the timing budget you actually have.
-4. **Hardware.** Onto the board, through the integration failures that only appear with
-   real signals — then the software side: data movement between processor and fabric,
-   drivers, and the C or C++ on top. Delivered with the models, test vectors and
-   documentation your own engineers need to take it forward without me.
+- **Algorithm design** — detection, acquisition, synchronisation and equalization, worked
+  out with the implementation already in mind.
+- **End-to-end models** — the whole chain in MATLAB, then the fixed-point mapping that
+  decides whether the RTL will match the paper.
+- **RTL** — VHDL for FPGA, written against that fixed-point model and verified to it,
+  inside the timing and resource budget you actually have.
+- **Hardware** — bring-up and debug on the board, data movement between processor and
+  fabric, drivers, and the C or C++ that sits on top.
 
-Any one of those works as an engagement on its own: a fixed-point model handed to your
-RTL team, a feasibility review before you commit to a part, a single block written to a
-specification. But what I add is worth most when I carry a system across all four.
+Any one of those works on its own — a fixed-point model handed to your RTL team, a
+feasibility review before you commit to a part, a single block to specification. What I
+add is worth most carried across all four.
 
 ## Where I have done this
 
