@@ -2,12 +2,8 @@
 title: PID Control in a Mobile Robot
 summary: Choosing the right error term for line following, wall following and object alignment — and a tuning procedure that works for all three.
 date: 2022-10-30
-cover: /assets/images/pid-controller/pid.jpeg
-cover_alt: Step response of a control system showing overshoot, rise time, settling time and steady-state error
-cover_caption: "Unit step response of a control system: the transient parameters we are trying to minimise."
 tags: [control, robotics, embedded]
 repo: https://github.com/sanjith1999/TIKIRI_MOLE_EN2532
-article: https://weirdspex.blogspot.com/2022/10/pid-control-in-mobile-robot.html
 math: true
 toc: true
 ---
@@ -38,6 +34,10 @@ execution. The problem with using the plain difference as that signal is that it
 only **one** degree of freedom — the amplification applied to the error. Make it too
 large and the response oscillates; make it too small and a significant steady-state error
 remains. This is where PID becomes useful.
+
+{% include figure.html src="/assets/images/pid-controller/pid.jpeg"
+   alt="Step response of a control system showing overshoot, rise time, delay, settling time and steady-state error, with underdamped, critically damped and overdamped curves"
+   caption="Unit step response of a control system: the transient parameters we are trying to minimise." %}
 
 ## PID control
 
@@ -179,7 +179,5 @@ error term for your problem, then following the tuning procedure.
 
 ---
 
-This write-up first appeared
-[on my blog](https://weirdspex.blogspot.com/2022/10/pid-control-in-mobile-robot.html).
 The robot and its simulation are at
 [sanjith1999/TIKIRI_MOLE_EN2532](https://github.com/sanjith1999/TIKIRI_MOLE_EN2532).

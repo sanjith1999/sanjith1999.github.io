@@ -7,7 +7,6 @@ cover_alt: The assembled micro-mouse, a round PCB with two wheels, an OLED displ
 cover_caption: Our design for RoboFest-2023.
 tags: [robotics, embedded, control, firmware]
 repo: https://github.com/sanjith1999/SINDiB-MicroMouse
-article: https://medium.com/@shansanjithofficial/firmware-design-for-micro-mouse-c3c682946275
 math: true
 toc: true
 ---
@@ -226,5 +225,4 @@ and suddenly you are in a whole new ballgame. But that is all part of the fun. ð
 
 ---
 
-All kinds of criticism are welcome. This write-up first appeared
-[on Medium](https://medium.com/@shansanjithofficial/firmware-design-for-micro-mouse-c3c682946275).
+All kinds of criticism are welcome.
