@@ -22,15 +22,3 @@ block, and the distance between them is where most of the engineering actually l
   verification data.
 - **Embedded** — microcontroller firmware, sensors and control loops, which is where
   most of my side projects begin.
-
-## This site
-
-Deliberately plain: Markdown files, one stylesheet, no database and no admin panel.
-It replaced a heavier application whose only real job was publishing text. The
-[source is on GitHub](https://github.com/sanjith1999), and every page here is a file in
-that repository.
-
-## Elsewhere
-
-Reach me at [{{ site.author.email }}](mailto:{{ site.author.email }}), or through the
-links in the footer.
