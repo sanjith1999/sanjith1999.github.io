@@ -28,17 +28,19 @@ add is worth most carried across all four.
 
 ## Where I have done this
 
-- Spread-spectrum waveforms for a **DVB-RCS2** secure TDMA system: modulator and
-  demodulator architecture, with burst detection and synchronisation working down to
-  **−11 dB SNR**.
-- An RTL **jammer detector** for protected waveforms, operating at up to **30 dB JSR**
-  and built for **120 MSa/s**.
-- A **DVB-RCS2** MF-TDMA modem covering **32+ waveforms** — **80 MSym/s** demodulation,
-  **100 Mb/s** output, and **under 50 µs** modulator latency.
-- A feedback **Kalman equalizer** for **MIL-STD-188-110B** over Watterson-fading HF
-  channels, from MATLAB model through to C++ on an Arm core.
-- **Zak-OTFS** taken over the air: delay-Doppler acquisition and blind detection,
-  validated on USRP hardware.
+- An end-to-end **Zak-OTFS** model in MATLAB, over TDL channels, with a
+  linear-complexity equalizer designed to stay implementable — acquisition from the
+  energy peak on the delay-Doppler grid, blind detection, and performance verified
+  against the channel model before it went over the air on USRP hardware.
+- A feedback **Kalman equalizer** for an HF modem to **MIL-STD-188-110B**, over
+  Watterson-fading channels: MATLAB model first, then C++ on an Arm Cortex-A53,
+  validated against the MATLAB vectors.
+- A **DVB-RCS2** satellite communication modem — modulator and demodulator for **32+
+  waveforms** of differing size, at sampling rates from a fraction of a MHz up to the
+  order of 100 MSa/s, pulling in carrier frequency offsets of a few kHz.
+- The spread-spectrum and protected waveforms alongside it: burst detection,
+  acquisition and synchronisation at negative SNR, on the order of **−10 dB**, and
+  jammer detection holding up to **30 dB JSR**.
 
 Day to day that means MATLAB, VHDL, C and C++, Vivado, and PetaLinux on the processor
 side.
