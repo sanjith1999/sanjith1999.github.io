@@ -1,7 +1,7 @@
 ---
 title: Work with me
 permalink: /work/
-subtitle: Signal-processing systems, carried from requirements to working hardware.
+subtitle: Algorithms that have to run in real time, on real hardware.
 ---
 
 I build high-speed physical-layer systems — the kind that live or die on their signal
