@@ -43,12 +43,24 @@ team builds it.
     and in-band distortion, and a channel emulator.
 
 - **DVB-RCS2** based secure communication system — assisted at system level.
-  - Modulator and demodulator for **32+ waveforms** of differing size.
-  - Sampling rates from a fraction of a MHz up to the order of 100 MSa/s.
-  - Carrier frequency offsets of a few kHz, acquired and tracked.
-  - Spread-spectrum waveforms: burst detection, acquisition and synchronisation at
-    negative SNR, on the order of **−10 dB**.
-  - Jammer detection for protected waveforms, holding up to **30 dB JSR**.
+  - Modulator and demodulator architecture for **32+ waveforms** and frequency-hopped
+    streams: core blocks designed in house — carrier frequency and phase recovery
+    pulling in offsets of a few kHz, turbo FEC decoding — with the remaining block work
+    split across the team, then integrated and held verifiable by a regression setup.
+  - The hard requirements met: **80 MSym/s** demodulation, **100 Mb/s** output, under
+    **50 µs** modulator latency, and backpressure end to end.
+  - Burst detector on DDR-backed deep buffering to hold spread bursts, with acquisition
+    and synchronisation at negative SNR, on the order of **−10 dB**.
+  - RTL **jammer detector** for protected waveforms, up to **30 dB JSR** at
+    **120 MSa/s**, reporting per-hop metrics upward with thresholds under higher-layer
+    control.
+  - Receive front end in VHDL resampling a fixed **491.52 MSa/s** ADC stream to any rate
+    from **0.5 to 120 MSa/s** — FIR, a hand-written half-band decimator, fractional
+    resampler and CIC.
+  - Digital AGC for the **DVB-S2** forward link: a double feedback loop at 120 MSa/s,
+    holding gain stable against jammers at 30 dB JSR.
+  - PS–PL data movement — a customised AXI-DMA with a PetaLinux driver on
+    hugepage-backed buffers, sustaining **758 Mb/s** at the worst-case 64-byte packet.
 
 - **MIL-STD-188-110B** — feedback Kalman equalizer for an HF modem.
   - Modelled in MATLAB over Watterson-fading channels, benchmarked against the standard.
