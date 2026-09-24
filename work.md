@@ -21,8 +21,7 @@ expensive to get wrong, and the handovers between stages where most of the cost 
   whoever maintains it.
 - **System-level work** — balancing resources, integration and bring-up against what
   the whole system needs.
-- **Consulting and mentorship** — helping your engineers build systems they can carry
-  on without me.
+- **Consulting and mentorship** — helping engineers build systems they can carry on.
 
 Any one of those works on its own.
 
@@ -66,7 +65,7 @@ down than take it on badly.
 
 ## Getting in touch
 
-Tell me the rough scope, the timeline you have in mind and the target device — enough
-for me to say honestly whether I am the right person for it.
+A few lines on the rough scope, the timeline you have in mind and the target device are
+usually enough for me to tell you honestly whether I am the right person for it.
 
 <p class="contact-email"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
