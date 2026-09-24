@@ -42,7 +42,7 @@ team builds it.
   - System-level validation now in progress: link budget, power-amplifier nonlinearity
     and in-band distortion, and a channel emulator.
 
-- **DVB-RCS2** based secure communication system — assisted at system level.
+- **DVB-RCS2** based secure communication system — PHY layer development.
   - Owned the modulator and demodulator architecture through to implementation,
     supporting **32+ waveforms** and frequency-hopped streams — carrier recovery and
     turbo FEC designed in house, the remaining blocks split across the team.
