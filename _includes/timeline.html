@@ -1,11 +1,13 @@
 {%- comment -%} Entries come from _data/experience.yml, newest first. {%- endcomment -%}
-<ol class="timeline">
-  {%- for item in site.data.experience %}
-  <li>
-    <p class="timeline-when">{{ item.when }}</p>
-    <h3 class="timeline-role">{{ item.role }}</h3>
-    <p class="timeline-org">{{ item.org }}{% if item.where %} · {{ item.where }}{% endif %}</p>
-    {%- if item.note %}<p class="timeline-note">{{ item.note }}</p>{% endif %}
-  </li>
-  {%- endfor %}
-</ol>
+<div class="timeline">
+  <ol class="timeline-list">
+    {%- for item in site.data.experience %}
+    <li>
+      <p class="timeline-when">{{ item.when }}</p>
+      <h3 class="timeline-role">{{ item.role }}</h3>
+      <p class="timeline-org">{{ item.org }}{% if item.where %} · {{ item.where }}{% endif %}</p>
+      {%- if item.note %}<p class="timeline-note">{{ item.note }}</p>{% endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+</div>
