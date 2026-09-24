@@ -48,6 +48,15 @@ kramdown:
     block:
       line_numbers: false
 
+plugins:
+  - jekyll-sitemap   # /sitemap.xml
+  - jekyll-feed      # /feed.xml for the write-ups
+
+feed:
+  collections:
+    projects:
+      path: /feed.xml
+
 sass:
   style: compressed
 
