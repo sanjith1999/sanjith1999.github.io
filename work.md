@@ -13,17 +13,16 @@ expensive to get wrong, and the handovers between stages where most of the cost 
 
 ## What I take on
 
-- **Algorithm design** — detection, acquisition, synchronisation and equalization, worked
-  out with the implementation already in mind.
-- **End-to-end models** — the whole chain in MATLAB, then the fixed-point mapping that
-  decides whether the RTL will match the paper.
-- **RTL** — VHDL for FPGA, written against that fixed-point model and verified to it,
-  inside the timing and resource budget you actually have.
-- **Hardware** — bring-up and debug on the board, data movement between processor and
-  fabric, drivers, and the C or C++ that sits on top.
-- **Technical leadership** — setting the architecture, dividing the work across your
-  team, reviewing what comes back, and mentoring the engineers who will own it after I
-  am gone.
+- **Algorithm design** — detection, synchronisation and equalization, validated for
+  performance against the requirements they have to meet.
+- **Fixed-point conversion** — floating-point models mapped to fixed point, with the
+  strategy chosen for the hardware and the performance cost measured and kept small.
+- **RTL implementation** — VHDL written to be debugged, and to still make sense to
+  whoever maintains it.
+- **System-level work** — balancing resources, integration and bring-up against what
+  the whole system needs.
+- **Consulting and mentorship** — helping your engineers build systems they can carry
+  on without me.
 
 Any one of those works on its own — a fixed-point model handed to your RTL team, a
 feasibility review before you commit to a part, a single block to specification. Where I
