@@ -34,29 +34,27 @@ team builds it.
 
 ## Where I have done this
 
-1. **Zak-OTFS** — helping build module-level capability around a novel delay-Doppler
-   waveform.
-   - An end-to-end model in MATLAB, with performance simulated over TDL channels.
-   - A **linear-complexity equalizer** — the differentiator in systems this complex,
-     where the obvious equalizer is the one you cannot afford.
-   - An **Ettus E320** driven straight from MATLAB, to take the chain over the air.
-   - Now on the system-level questions: link budget, power-amplifier nonlinearity and
-     the in-band distortion it introduces, and validation against a channel emulator.
+- **Zak-OTFS** — novel delay-Doppler waveform based PHY design.
+  - End-to-end model in MATLAB, with performance simulated over TDL channels.
+  - Linear-complexity equalizer, designed to stay implementable — the differentiator in
+    systems this complex.
+  - Ettus **E320** driven directly from MATLAB, for over-the-air experiments.
+  - System-level validation now in progress: link budget, power-amplifier nonlinearity
+    and in-band distortion, and a channel emulator.
 
-2. **HF modem to MIL-STD-188-110B** — a feedback Kalman equalizer.
-   - Modelled in MATLAB over Watterson-fading channels and benchmarked against the
-     figures in the standard.
-   - Implemented in C++ on an Arm Cortex-A53 and validated against the MATLAB vectors.
+- **MIL-STD-188-110B** — feedback Kalman equalizer for an HF modem.
+  - Modelled in MATLAB over Watterson-fading channels, benchmarked against the standard.
+  - Implemented in C++ on an Arm Cortex-A53, validated against the MATLAB vectors.
 
-3. **DVB-RCS2 satellite communication modem** — modulator and demodulator.
-   - **32+ waveforms** of differing size.
-   - Sampling rates from a fraction of a MHz up to the order of 100 MSa/s.
-   - Carrier frequency offsets of a few kHz, pulled in and tracked.
+- **DVB-RCS2** — modulator and demodulator for a satellite communication modem.
+  - **32+ waveforms** of differing size.
+  - Sampling rates from a fraction of a MHz up to the order of 100 MSa/s.
+  - Carrier frequency offsets of a few kHz, acquired and tracked.
 
-4. **Spread-spectrum and protected waveforms** — the anti-jam side of the same system.
-   - Burst detection, acquisition and synchronisation at negative SNR, on the order of
-     **−10 dB**.
-   - Jammer detection holding up to **30 dB JSR**.
+- **Spread spectrum** — the anti-jam side of the same system.
+  - Burst detection, acquisition and synchronisation at negative SNR, on the order of
+    **−10 dB**.
+  - Jammer detection holding up to **30 dB JSR**.
 
 Day to day that means MATLAB, VHDL, C and C++, Vivado, and PetaLinux on the processor
 side.

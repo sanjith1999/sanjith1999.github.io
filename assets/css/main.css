@@ -231,8 +231,8 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 /* A nested list is a detail of its parent item, so it sits closer and lighter. */
 .prose li > ul, .prose li > ol { margin-top: 0.4rem; color: var(--ink-muted); }
 .prose li > ul li, .prose li > ol li { margin-bottom: 0.25rem; }
-/* Give the entries of an outer numbered list room to read as separate items. */
-.prose > ol > li { margin-bottom: var(--space-2); }
+/* An item carrying a sub-list is a group, so give it room to read as one. */
+.prose li:has(> ul), .prose li:has(> ol) { margin-bottom: var(--space-2); }
 .prose hr { border: 0; border-top: 1px solid var(--rule); margin-block: var(--space-4); }
 .prose blockquote {
   border-left: 2px solid var(--accent); padding-left: var(--space-2);
