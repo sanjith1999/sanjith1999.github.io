@@ -279,6 +279,39 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 .page-nav a { text-decoration: none; }
 .page-nav a:hover { text-decoration: underline; }
 
+/* --- Timeline ------------------------------------------------------------- */
+.timeline { list-style: none; padding: 0; margin: var(--space-3) 0 0; position: relative; }
+/* The rule runs between the first and last markers, not past them. */
+.timeline::before {
+  content: ""; position: absolute; left: 4px; top: 0.7em; bottom: 0.7em;
+  width: 1px; background: var(--rule);
+}
+.timeline > li {
+  position: relative; margin: 0; padding-left: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+.timeline > li:last-child { padding-bottom: 0; }
+.timeline > li::before {
+  content: ""; position: absolute; left: 0; top: 0.55em; box-sizing: border-box;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--bg); border: 1.5px solid var(--accent);
+}
+/* The current role gets the filled marker. */
+.timeline > li:first-child::before { background: var(--accent); }
+.timeline-when {
+  font-family: var(--ui); font-size: var(--step--1); color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+.timeline-role {
+  font-family: var(--body); font-size: var(--step-0); font-weight: 700;
+  letter-spacing: 0; margin-top: 0.1rem;
+}
+.timeline-org {
+  font-family: var(--ui); font-size: var(--step--1); color: var(--ink-muted);
+  margin-bottom: 0.45rem;
+}
+.timeline-note { color: var(--ink-muted); }
+
 /* --- Figures -------------------------------------------------------------- */
 .figure {
   width: var(--figure-width);

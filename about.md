@@ -12,16 +12,9 @@ Carrying that end-to-end responsibility is the part I value most. A block that l
 clean in a block diagram and a block that closes timing on a device are rarely the same
 block, and the distance between them is where most of the engineering actually lives.
 
-## What I work with
+## The path so far
 
-- **Signal processing** — modulation and demodulation, synchronisation, channel
-  estimation, filter design.
-- **RTL and FPGA** — VHDL, fixed-point arithmetic, pipelining, timing closure,
-  hardware/software co-design.
-- **Modelling** — MATLAB and Python for system models, bit-accurate references and
-  verification data.
-- **Embedded** — microcontroller firmware, sensors and control loops, which is where
-  most of my side projects begin.
+{% include timeline.html %}
 
 ## Getting in touch
 

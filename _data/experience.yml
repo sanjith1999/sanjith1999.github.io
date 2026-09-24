@@ -1,0 +1,43 @@
+# The About page timeline, newest first. Add an entry and it appears.
+- when: 2025 — present
+  role: Team Lead, DSP/FPGA
+  org: Thakshana Technologies
+  where: Colombo
+  note: >-
+    Leading the team that builds the physical layer of secure FPGA/DSP communication
+    systems — architecture, technical direction and review, alongside my own design
+    work on spread-spectrum waveforms and anti-jam receivers.
+
+- when: 2024 — 2025
+  role: DSP/FPGA Engineer
+  org: Thakshana Technologies
+  where: Colombo
+  note: >-
+    Modem subsystems carried from MATLAB models through to FPGA implementation:
+    modulator and demodulator design, carrier recovery, and the receive datapath
+    around them.
+
+- when: 2023 — 2024
+  role: Undergraduate Researcher, Computational Imaging
+  org: Wadduwage Lab, Harvard University
+  where: Remote
+  note: >-
+    Simulating a 3D fluorescence microscope that encodes a volume onto a 2D detector,
+    and reconstructing it with plug-and-play methods. My introduction to ill-posed
+    inverse problems.
+
+- when: 2023
+  role: Research Fellow
+  org: Singapore University of Technology and Design
+  where: Singapore
+  note: >-
+    Prototyping a Bluetooth Low Energy angle-of-arrival localisation system: phase-based
+    direction estimation across antenna elements, and how it degrades under noise and
+    multipath.
+
+- when: 2020 — 2024
+  role: BSc, Electronic and Telecommunication Engineering
+  org: University of Moratuwa
+  where: Sri Lanka
+  note: >-
+    Graduated with a CGPA of 4.12/4.2 and a gold medal.
