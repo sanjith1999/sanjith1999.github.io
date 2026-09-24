@@ -72,6 +72,7 @@ down than take it on badly.
 
 ## Getting in touch
 
-Email me at [{{ site.author.email }}](mailto:{{ site.author.email }}). It helps to
-mention the standard or waveform, the target device, and roughly when you need it —
-enough for me to say honestly whether I am the right person.
+Tell me the rough scope, the timeline you have in mind and the target device — enough
+for me to say honestly whether I am the right person for it.
+
+<p class="contact-email"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
