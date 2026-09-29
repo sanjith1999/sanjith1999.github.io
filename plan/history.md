@@ -13,6 +13,15 @@ What changed, why, and what it means for the next step.
 
 ---
 
+## 2026-09-29 — Industrial CV on About
+
+Added a compact CV section between the experience timeline and contact details.
+The PDF is an unchanged copy of `cv-senior.pdf` from `shanSanjith/resume` at
+commit `2c88079`, fetched through `github-backup`. It is served locally at
+`/assets/documents/sanjith-cv.pdf` so visitors can open it directly.
+To update it, replace that file with the latest industrial PDF from the résumé repo.
+Checked the PDF (two pages), its identity and the link target.
+
 ## 2026-09-24 — /work/ reframed around the end-to-end path
 **Phase:** post-launch · **Status:** done
 

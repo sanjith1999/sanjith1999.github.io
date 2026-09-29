@@ -16,6 +16,10 @@ block, and the distance between them is where most of the engineering actually l
 
 {% include timeline.html %}
 
+## CV
+
+[View my industrial CV (PDF)]({{ '/assets/documents/sanjith-cv.pdf' | relative_url }}).
+
 ## Getting in touch
 
 The fastest way to reach me is email.
