@@ -8,7 +8,7 @@ I work on high-speed physical-layer systems — the kind that live or die on the
 processing.
 
 A system like that is more than one person's work. I design the signal-processing core
-and lead your engineers through the rest — the architecture, the decisions that are
+and work alongside your engineers on the rest — the architecture, the decisions that are
 expensive to get wrong, and the handovers between stages where most of the cost hides.
 
 ## What I take on
