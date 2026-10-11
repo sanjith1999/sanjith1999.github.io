@@ -5,14 +5,16 @@ subtitle: Algorithms that have to run in real time, on real hardware.
 ---
 
 In a high-speed physical layer, the decisions that cost the most are made early — the
-architecture, the fixed-point strategy, the handovers between stages — and they are the
-hardest to revisit, because by the time they hurt there is RTL sitting on top of them.
+architecture, the handovers between stages — and they are the hardest to revisit,
+because by the time they hurt there is RTL sitting on top of them.
 
 I help build the digital processing part of systems like that. It is more than one
 person's work: I can design the core architecture and then stay alongside your engineers
 for the whole arc — signal-processing design, implementation, bring-up.
 
 ## What I take on
+
+Any one of these works on its own.
 
 - **Algorithm design** — validated for performance against the requirements it has to
   meet.
@@ -24,17 +26,7 @@ for the whole arc — signal-processing design, implementation, bring-up.
   the whole system needs.
 - **Consulting and mentorship** — helping engineers build systems they can carry on.
 
-Any one of those works on its own.
-
 ## Where I have done this
-
-- **Zak-OTFS** — novel delay-Doppler waveform based PHY design.
-  - End-to-end model at **1 MHz** BW, with performance simulated over
-    TDL channels.
-  - Linear-complexity equalizer, designed to stay implementable — the differentiator.
-  - Ettus **E320** driven directly from MATLAB, for over-the-air experiments.
-  - System-level validation now in progress: link budget, power-amplifier nonlinearity
-    and in-band distortion, and a channel emulator.
 
 - **DVB-RCS2** based secure communication system — PHY layer development.
   - Owned the modulator and demodulator architecture through to implementation,
@@ -45,13 +37,19 @@ Any one of those works on its own.
   - Jammer detector implementation for protected waveforms, supporting up to
     **30 dB JSR**, with per-hop metrics reported to higher layers.
 
+- **Zak-OTFS** — novel delay-Doppler waveform based PHY design.
+  - End-to-end model at **1 MHz** BW, with performance simulated over
+    TDL channels.
+  - Linear-complexity equalizer, designed to stay implementable — the differentiator.
+  - Ettus **E320** driven directly from MATLAB, for over-the-air experiments.
+  - System-level validation now in progress: link budget, power-amplifier nonlinearity
+    and in-band distortion, and a channel emulator.
+
 - **Feedback Kalman equalizer** — communication system based on **MIL-STD-188-110B**.
   - Original design, simulated over Watterson-fading channels and tuned to the figures
     in the standard.
   - Fixed-point model for implementation, with the performance validated.
   - C++ on an **Arm Cortex-A53**, supporting PS-based modem development.
-
-Day to day that means MATLAB, VHDL, C and C++, Vivado, and Linux.
 
 ## How I work
 
@@ -60,6 +58,9 @@ models, vectors and documentation handed over with the RTL, so your own team can
 the work independently rather than take my word for it. I am happy to work under an NDA,
 and to stay inside whatever export or classification constraints your programme sits
 under.
+
+<p class="tools"><span class="tools-label">Tools</span>
+<span class="tag">MATLAB</span><span class="tag">VHDL</span><span class="tag">C / C++</span><span class="tag">Vivado</span><span class="tag">Linux</span></p>
 
 I take on a small number of engagements a year, which means I would rather turn something
 down than take it on badly.

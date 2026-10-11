@@ -231,6 +231,15 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
   background: var(--accent-soft); color: var(--accent);
 }
 
+/* A labelled row of .tag pills. Margin-bottom is left to `.prose > p`,
+   which outranks this selector anyway. */
+.tools { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) 0.4rem; }
+.tools .tag { margin-right: 0; }
+.tools-label {
+  font-family: var(--ui); font-size: var(--step--1); letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ink-faint); margin-right: var(--space-1);
+}
+
 .more { margin-top: var(--space-3); font-family: var(--ui); font-size: var(--step--1); }
 
 /* --- Prose ---------------------------------------------------------------- */
