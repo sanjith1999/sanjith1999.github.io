@@ -60,7 +60,7 @@ and to stay inside whatever export or classification constraints your programme 
 under.
 
 <p class="tools"><span class="tools-label">Tools</span>
-<span class="tag">MATLAB</span><span class="tag">VHDL</span><span class="tag">C / C++</span><span class="tag">Vivado</span><span class="tag">Linux</span></p>
+<span class="tag">VHDL</span><span class="tag">MATLAB</span><span class="tag">C / C++</span><span class="tag">Python</span><span class="tag">Vivado</span><span class="tag">Quartus</span><span class="tag">Questa</span><span class="tag">Git</span><span class="tag">Linux</span></p>
 
 I take on a small number of engagements a year, which means I would rather turn something
 down than take it on badly.
