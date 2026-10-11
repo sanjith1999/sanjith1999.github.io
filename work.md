@@ -7,9 +7,10 @@ subtitle: Algorithms that have to run in real time, on real hardware.
 I work on high-speed physical-layer systems — the kind that live or die on their signal
 processing.
 
-A system like that is more than one person's work. I design the signal-processing core
-and work alongside your engineers on the rest — the architecture, the decisions that are
-expensive to get wrong, and the handovers between stages where most of the cost hides.
+A system like that is more than one person's work. I can design the core architecture
+and then stay alongside your engineers for the whole arc — signal-processing design,
+implementation, bring-up. That is where the expensive decisions get made, and where the
+handovers between stages hide most of the cost.
 
 ## What I take on
 
