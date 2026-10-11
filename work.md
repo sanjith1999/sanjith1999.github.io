@@ -4,13 +4,13 @@ permalink: /work/
 subtitle: Algorithms that have to run in real time, on real hardware.
 ---
 
-I help build the digital processing part of high-speed physical-layer systems — the kind
-that live or die on it.
+In a high-speed physical layer, the decisions that cost the most are made early — the
+architecture, the fixed-point strategy, the handovers between stages — and they are the
+hardest to revisit, because by the time they hurt there is RTL sitting on top of them.
 
-A system like that is more than one person's work. I can design the core architecture
-and then stay alongside your engineers for the whole arc — signal-processing design,
-implementation, bring-up. That is where the expensive decisions get made, and where the
-handovers between stages hide most of the cost.
+I help build the digital processing part of systems like that. It is more than one
+person's work: I can design the core architecture and then stay alongside your engineers
+for the whole arc — signal-processing design, implementation, bring-up.
 
 ## What I take on
 
