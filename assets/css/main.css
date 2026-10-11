@@ -180,7 +180,7 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 .lede { font-family: var(--body); font-size: var(--step-1); color: var(--ink-muted); line-height: 1.5; }
 
 /* --- Home ----------------------------------------------------------------- */
-.hero { padding-block: var(--space-4) var(--space-5); max-width: var(--measure); }
+.hero { padding-block: var(--space-4) var(--space-5); max-width: 58ch; }
 .hero h1 { margin-bottom: var(--space-2); }
 .hero-role {
   font-family: var(--mono); font-size: var(--step-0); color: var(--accent);
@@ -190,6 +190,8 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 .hero-role .caret.blink { animation: blink 1.1s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 .hero p { color: var(--ink-muted); font-size: var(--step-1); line-height: 1.6; }
+.hero-sub { font-size: var(--step-0); margin-top: var(--space-3); }
+.hero-sub em { font-style: italic; color: var(--ink); }
 
 .section { padding-block: var(--space-4); border-top: 1px solid var(--rule); }
 .section-title {
