@@ -37,7 +37,7 @@
 
   --measure: 74ch;      /* prose line length */
   --figure-width: 80%;  /* figures, as a share of the column */
-  --wide:    58rem;     /* full container */
+  --wide:    64rem;     /* full container */
   --gutter:  1.25rem;
 
   --step--1: 0.875rem;
