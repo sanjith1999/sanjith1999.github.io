@@ -5,7 +5,19 @@
    ========================================================================== */
 
 /* --- Tokens --------------------------------------------------------------- */
+/* Themes. One palette per block, always the same token names.
+
+   `:root` is the default (warm light). The dark block applies only while
+   nothing has been chosen — `:not([data-theme])` — so a stored choice
+   silently switches the system preference off. The explicit blocks come
+   after it: they match its specificity, and the later rule wins.
+
+   To add a theme: append a `:root[data-theme="name"]` block redefining
+   whatever differs, and add the name to THEMES in assets/js/main.js. A
+   token left out simply inherits the warm light value above. */
 :root {
+  color-scheme: light;
+
   --bg:        #fdfcfa;
   --bg-sunk:   #f4f2ee;
   --ink:       #1b1a18;
@@ -15,6 +27,15 @@
   --accent:    #0f6b63;
   --accent-soft: #e2f0ee;
   --select:    #d8ece9;
+
+  /* Rouge tokens live in the palette too, or code keeps one theme's
+     colours while the page around it changes. */
+  --code-key:  #9a3b8c;
+  --code-str:  #2f7d32;
+  --code-num:  #b3541e;
+  --code-fn:   #2b6cb0;
+  --code-type: #0f6b63;
+  --code-err:  #c0392b;
 
   /* JetBrains Mono — the kitty terminal face, unpatched (the Nerd Font icon
      glyphs are terminal-only and would cost megabytes here). */
@@ -54,8 +75,11 @@
   --space-5: 5rem;
 }
 
+/* Dark, only while the reader has not chosen for themselves. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+
     --bg:        #16171b;
     --bg-sunk:   #1e1f25;
     --ink:       #e7e4dd;
@@ -65,7 +89,51 @@
     --accent:    #7fd1c6;
     --accent-soft: #1f2e2d;
     --select:    #274441;
+
+    --code-key:  #d78fc8;
+    --code-str:  #9ccf92;
+    --code-num:  #e0a06a;
+    --code-fn:   #85b8f0;
+    --code-type: #7fd1c6;
+    --code-err:  #ef8a80;
   }
+}
+
+/* Grey: the same light structure on a cool neutral ground. The accent
+   and the code colours carry over from `:root` unchanged — they were
+   drawn for a light background and still read on this one. */
+:root[data-theme="grey"] {
+  color-scheme: light;
+
+  --bg:        #eef0f2;
+  --bg-sunk:   #e3e6e9;
+  --ink:       #1b1e21;
+  --ink-muted: #545a60;
+  --ink-faint: #848b92;
+  --rule:      #d3d7db;
+  --accent-soft: #dcebe9;
+  --select:    #cce6e2;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:        #16171b;
+  --bg-sunk:   #1e1f25;
+  --ink:       #e7e4dd;
+  --ink-muted: #a9a49a;
+  --ink-faint: #7c776e;
+  --rule:      #2e3038;
+  --accent:    #7fd1c6;
+  --accent-soft: #1f2e2d;
+  --select:    #274441;
+
+  --code-key:  #d78fc8;
+  --code-str:  #9ccf92;
+  --code-num:  #e0a06a;
+  --code-fn:   #85b8f0;
+  --code-type: #7fd1c6;
+  --code-err:  #ef8a80;
 }
 
 /* --- Reset ---------------------------------------------------------------- */
@@ -138,6 +206,17 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 }
 .site-name:hover { color: var(--accent); }
 
+/* Theme control. Sits left of the nav so the nav items keep their
+   positions; it is hidden until main.js reveals it, so a reader without
+   JavaScript never sees a control that cannot work. */
+.header-actions { display: flex; align-items: center; gap: var(--space-3); }
+.theme-toggle {
+  font-family: var(--ui); font-size: var(--step--1); letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ink-faint);
+  padding-block: 0.25rem; min-width: 5ch; text-align: right;
+}
+.theme-toggle:hover { color: var(--ink); }
+
 .site-nav { display: flex; gap: var(--space-3); font-family: var(--ui); font-size: var(--step--1); }
 .site-nav a { color: var(--ink-muted); text-decoration: none; padding-block: 0.25rem; }
 .site-nav a:hover { color: var(--ink); }
@@ -158,6 +237,7 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar::after  { top: 0; transform: rotate(-45deg); }
 
 @media (max-width: 34rem) {
+  .header-actions { gap: var(--space-2); }
   .nav-toggle { display: block; }
   .site-nav {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
@@ -398,21 +478,13 @@ code, kbd, samp, pre { font-family: var(--mono); font-size: 0.875em; }
 
 /* Rouge tokens — tuned to stay legible in both schemes. */
 .highlight .c, .highlight .c1, .highlight .cm, .highlight .cs { color: var(--ink-faint); font-style: italic; }
-.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt { color: #9a3b8c; font-weight: 600; }
-.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sc, .highlight .sd { color: #2f7d32; }
-.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .il { color: #b3541e; }
-.highlight .nf, .highlight .nd { color: #2b6cb0; }
-.highlight .nc, .highlight .nn { color: #0f6b63; }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt { color: var(--code-key); font-weight: 600; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sc, .highlight .sd { color: var(--code-str); }
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .il { color: var(--code-num); }
+.highlight .nf, .highlight .nd { color: var(--code-fn); }
+.highlight .nc, .highlight .nn { color: var(--code-type); }
 .highlight .o, .highlight .ow { color: var(--ink-muted); }
-.highlight .err { color: #c0392b; }
-@media (prefers-color-scheme: dark) {
-  .highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt { color: #d78fc8; }
-  .highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sc, .highlight .sd { color: #9ccf92; }
-  .highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .il { color: #e0a06a; }
-  .highlight .nf, .highlight .nd { color: #85b8f0; }
-  .highlight .nc, .highlight .nn { color: #7fd1c6; }
-  .highlight .err { color: #ef8a80; }
-}
+.highlight .err { color: var(--code-err); }
 
 /* --- Math ----------------------------------------------------------------- */
 .katex-display { overflow-x: auto; overflow-y: hidden; padding-block: 0.4rem; }

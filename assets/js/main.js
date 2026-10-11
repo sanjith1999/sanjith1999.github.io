@@ -22,6 +22,39 @@
     });
   }
 
+  /* Theme ------------------------------------------------------------------ */
+  /* Add a theme by appending its name here and adding the matching
+     :root[data-theme="name"] block in main.css. "auto" means no attribute,
+     which hands the page back to prefers-color-scheme. */
+  var THEMES = ['auto', 'light', 'grey', 'dark'];
+  var themeButton = document.querySelector('[data-theme-toggle]');
+
+  function storedTheme() {
+    try {
+      var t = localStorage.getItem('theme');
+      return THEMES.indexOf(t) === -1 ? 'auto' : t;
+    } catch (e) { return 'auto'; }
+  }
+
+  function applyTheme(name) {
+    if (name === 'auto') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', name);
+
+    themeButton.textContent = name;
+    themeButton.setAttribute('aria-label', 'Theme: ' + name + '. Activate to change.');
+
+    try { localStorage.setItem('theme', name); } catch (e) { /* nothing to remember it with */ }
+  }
+
+  if (themeButton) {
+    themeButton.hidden = false;
+    applyTheme(storedTheme());
+
+    themeButton.addEventListener('click', function () {
+      applyTheme(THEMES[(THEMES.indexOf(storedTheme()) + 1) % THEMES.length]);
+    });
+  }
+
   /* Hero tagline ----------------------------------------------------------- */
   var role = document.querySelector('.hero-role[data-roles]');
   if (!role) return;
