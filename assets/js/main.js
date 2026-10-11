@@ -26,7 +26,7 @@
   /* Add a theme by appending its name here and adding the matching
      :root[data-theme="name"] block in main.css. "auto" means no attribute,
      which hands the page back to prefers-color-scheme. */
-  var THEMES = ['auto', 'light', 'grey', 'dark'];
+  var THEMES = ['auto', 'grey', 'dark'];
   var themeButton = document.querySelector('[data-theme-toggle]');
 
   function storedTheme() {

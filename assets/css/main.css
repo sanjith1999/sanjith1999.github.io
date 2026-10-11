@@ -18,15 +18,18 @@
 :root {
   color-scheme: light;
 
-  --bg:        #fdfcfa;
-  --bg-sunk:   #f4f2ee;
-  --ink:       #1b1a18;
-  --ink-muted: #5d5a54;
-  --ink-faint: #8a867e;
-  --rule:      #e4e0d8;
+  /* Grey. Text sits well clear of the ground: muted at about
+     8:1 and faint at about 4.9:1, because grey-on-grey loses the hue
+     separation that carried the old cream palette. */
+  --bg:        #e8eaed;
+  --bg-sunk:   #dcdfe3;
+  --ink:       #15181b;
+  --ink-muted: #3f454b;
+  --ink-faint: #5e656c;
+  --rule:      #c6cbd0;
   --accent:    #0f6b63;
-  --accent-soft: #e2f0ee;
-  --select:    #d8ece9;
+  --accent-soft: #d7e8e5;
+  --select:    #c3e3de;
 
   /* Rouge tokens live in the palette too, or code keeps one theme's
      colours while the page around it changes. */
@@ -99,21 +102,10 @@
   }
 }
 
-/* Grey: the same light structure on a cool neutral ground. The accent
-   and the code colours carry over from `:root` unchanged — they were
-   drawn for a light background and still read on this one. */
-:root[data-theme="grey"] {
-  color-scheme: light;
-
-  --bg:        #eef0f2;
-  --bg-sunk:   #e3e6e9;
-  --ink:       #1b1e21;
-  --ink-muted: #545a60;
-  --ink-faint: #848b92;
-  --rule:      #d3d7db;
-  --accent-soft: #dcebe9;
-  --select:    #cce6e2;
-}
+/* Grey is the palette on `:root`, so choosing it only needs to exist as a
+   name — the attribute switches the dark media query off and the default
+   applies. A future light theme would declare its own tokens here. */
+:root[data-theme="grey"] { color-scheme: light; }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
@@ -387,10 +379,13 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 
 /* --- Topics --------------------------------------------------------------- */
 /* A topic is open-ended: the badge says it is ongoing, never how long. */
+/* Shaped like the .tag pills it sits next to, but neutral rather than
+   accented, so it reads as a different kind of label and not a tag. The
+   outlined version read as a stray box in light and vanished in dark. */
 .topic-badge {
-  font-family: var(--ui); font-size: 0.75rem; letter-spacing: 0.06em;
-  text-transform: uppercase; color: var(--ink-faint);
-  padding: 0.1rem 0.45rem; border: 1px solid var(--rule); border-radius: 3px;
+  font-family: var(--ui); font-size: 0.75rem; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--ink-muted);
+  background: var(--bg-sunk); padding: 0.1rem 0.5rem; border-radius: 999px;
 }
 .eyebrow-sep { color: var(--rule); }
 .topic-articles { margin-top: var(--space-5); padding-top: var(--space-3); border-top: 1px solid var(--rule); }
