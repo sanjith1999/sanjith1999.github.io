@@ -282,6 +282,30 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 .page-nav a { text-decoration: none; }
 .page-nav a:hover { text-decoration: underline; }
 
+/* --- Topics --------------------------------------------------------------- */
+/* A topic is open-ended: the badge says it is ongoing, never how long. */
+.topic-badge {
+  font-family: var(--ui); font-size: 0.75rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ink-faint);
+  padding: 0.1rem 0.45rem; border: 1px solid var(--rule); border-radius: 3px;
+}
+.eyebrow-sep { color: var(--rule); }
+.topic-articles { margin-top: var(--space-5); padding-top: var(--space-3); border-top: 1px solid var(--rule); }
+.topic-empty { font-family: var(--body); color: var(--ink-faint); }
+
+/* Previous/next within a topic. Stacked on narrow screens, paired above it. */
+.topic-nav {
+  list-style: none; padding: 0; margin: 0 0 var(--space-2);
+  display: grid; gap: var(--space-2);
+}
+.topic-nav li { display: flex; flex-direction: column; gap: 0.15rem; }
+.topic-nav span { color: var(--ink-faint); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.topic-nav a { font-family: var(--body); font-size: var(--step-0); }
+@media (min-width: 38rem) {
+  .topic-nav { grid-template-columns: 1fr 1fr; }
+  .topic-next { text-align: right; }
+}
+
 /* --- Timeline ------------------------------------------------------------- */
 .timeline { position: relative; margin: var(--space-3) 0 0; }
 /* Wrapped in a div so `.prose > ol` cannot reach it with markers or padding. */

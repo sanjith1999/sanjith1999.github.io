@@ -35,6 +35,53 @@ Put its images in `assets/images/my-project/`, commit, push. GitHub rebuilds the
 Nothing else needs editing — the home page and `/ideas/` pick it up automatically,
 sorted by `date`.
 
+## Topics
+
+A topic is an open-ended subject you keep returning to — not a series with a
+fixed number of parts. It is one hub page plus however many articles exist.
+
+The hub is an ordinary file in `_ideas/`, with `layout: topic` and no `order`:
+
+```markdown
+---
+title: Resampling
+layout: topic
+topic: resampling
+summary: One line that appears in the listing.
+date: 2026-10-11
+tags: [dsp, resampling]
+---
+
+A few paragraphs on why the subject interests you. This page outlives any one
+article under it, so keep it durable — it is not the introduction.
+```
+
+An article joins the topic by naming it and taking a place in the reading order:
+
+```markdown
+---
+title: Upsampling
+topic: resampling
+order: 30
+summary: One line that appears on the hub.
+date: 2026-10-20
+---
+```
+
+Then commit and push. The hub picks the article up on its own; nothing else
+needs editing.
+
+- **`order` is what makes a doc a part.** The hub has none. That single rule is
+  what hides parts from `/ideas/` and the home page, so they are reached through
+  their hub, and it is what the previous/next links walk.
+- **Number in tens** — 10, 20, 30. Slipping an article in between later costs
+  nothing, where consecutive numbers would mean renaming the lot.
+- **Nothing is promised in advance.** There is no list of planned parts, by
+  design: the hub shows what exists and says how many articles so far. Add to it
+  whenever you have something to say.
+- **Order, not date.** Parts sort by `order`, so you can publish out of sequence
+  or revise an early article later without reshuffling anything.
+
 ### Figures
 
 ```liquid

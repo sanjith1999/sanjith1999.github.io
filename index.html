@@ -22,7 +22,7 @@ title: Home
 
   <section class="section" id="ideas">
     <h2 class="section-title">Recent ideas</h2>
-    {%- assign recent = site.ideas | sort: "date" | reverse -%}
+    {%- assign recent = site.ideas | where_exp: "i", "i.order == nil" | sort: "date" | reverse -%}
     <ul class="entries">
       {%- for idea in recent limit: 3 -%}
         {% include idea-card.html idea=idea %}

@@ -1,9 +1,32 @@
 ---
 layout: default
 ---
+{%- comment -%}
+  Topic membership, if any: the hub is the doc in this topic with no `order`,
+  the siblings are the ones that have it, in `order`.
+{%- endcomment -%}
+{%- comment -%} `order` is what marks a doc as a part; a hub has none. {%- endcomment -%}
+{%- if page.topic and page.order -%}
+  {%- assign siblings = site.ideas | where: "topic", page.topic | where_exp: "i", "i.order" | sort: "order" -%}
+  {%- assign hub = site.ideas | where: "topic", page.topic | where_exp: "i", "i.order == nil" | first -%}
+  {%- comment -%}
+    Liquid cannot index an array by a filtered expression, so prev/next are
+    found by walking: remember the last one seen before this page, and take
+    the first one seen after it.
+  {%- endcomment -%}
+  {%- assign seen = false -%}
+  {%- for s in siblings -%}
+    {%- if seen and next == nil %}{% assign next = s %}{% endif -%}
+    {%- if s.url == page.url %}{% assign seen = true %}{% endif -%}
+    {%- unless seen %}{% assign prev = s %}{% endunless -%}
+  {%- endfor -%}
+{%- endif -%}
 <article class="wrap prose project"{% if page.figure_width %} style="--figure-width: {{ page.figure_width }}"{% endif %}>
   <header class="page-head">
-    <p class="eyebrow"><a href="{{ '/ideas/' | relative_url }}">Ideas</a></p>
+    <p class="eyebrow">
+      <a href="{{ '/ideas/' | relative_url }}">Ideas</a>
+      {%- if hub %} <span class="eyebrow-sep">/</span> <a href="{{ hub.url | relative_url }}">{{ hub.title }}</a>{% endif %}
+    </p>
     <h1>{{ page.title }}</h1>
     {%- if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
 
@@ -41,6 +64,14 @@ layout: default
   {{ content }}
 
   <nav class="page-nav">
+    {%- if hub %}
+    <ul class="topic-nav">
+      {%- if prev %}<li class="topic-prev"><span>Previous</span> <a href="{{ prev.url | relative_url }}">{{ prev.title }}</a></li>{% endif %}
+      {%- if next %}<li class="topic-next"><span>Next</span> <a href="{{ next.url | relative_url }}">{{ next.title }}</a></li>{% endif %}
+    </ul>
+    <a href="{{ hub.url | relative_url }}">← More on {{ hub.title | downcase }}</a>
+    {%- else %}
     <a href="{{ '/ideas/' | relative_url }}">← All ideas</a>
+    {%- endif %}
   </nav>
 </article>

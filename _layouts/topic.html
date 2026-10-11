@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{%- comment -%}
+  A topic hub: a standing page for an open-ended subject. Articles declare
+  their membership with `topic:` plus an `order:`; the hub itself has no
+  `order`, which is what distinguishes it everywhere else in the site.
+  The list below is whatever exists — nothing is promised in advance.
+{%- endcomment -%}
+{%- assign articles = site.ideas | where: "topic", page.topic | where_exp: "i", "i.order" | sort: "order" -%}
+<article class="wrap prose topic">
+  <header class="page-head">
+    <p class="eyebrow"><a href="{{ '/ideas/' | relative_url }}">Ideas</a></p>
+    <h1>{{ page.title }}</h1>
+    {%- if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+
+    <p class="meta">
+      <span class="topic-badge">Ongoing</span>
+      {%- if articles.size == 0 -%}
+        <span>nothing published yet</span>
+      {%- elsif articles.size == 1 -%}
+        <span>1 article so far</span>
+      {%- else -%}
+        <span>{{ articles.size }} articles so far</span>
+      {%- endif -%}
+      {%- if page.tags and page.tags.size > 0 %}
+      <span class="tags">{% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</span>
+      {%- endif %}
+    </p>
+  </header>
+
+  {{ content }}
+
+  <section class="topic-articles">
+    <h2 class="section-title">Articles</h2>
+    {%- if articles.size > 0 %}
+    <ul class="entries">
+      {%- for article in articles -%}
+        {% include idea-card.html idea=article %}
+      {%- endfor -%}
+    </ul>
+    {%- else %}
+    <p class="topic-empty">Nothing written here yet. It is coming.</p>
+    {%- endif %}
+  </section>
+
+  <nav class="page-nav">
+    <a href="{{ '/ideas/' | relative_url }}">← All ideas</a>
+  </nav>
+</article>
