@@ -36,11 +36,19 @@
     } catch (e) { return THEMES[0]; }
   }
 
+  function nextAfter(name) {
+    return THEMES[(THEMES.indexOf(name) + 1) % THEMES.length];
+  }
+
   function applyTheme(name) {
     document.documentElement.setAttribute('data-theme', name);
 
-    themeButton.textContent = name;
-    themeButton.setAttribute('aria-label', 'Theme: ' + name + '. Activate to change.');
+    // The control is labelled with where it goes, not where it is: while
+    // the page is grey the button reads "dark", because that is what
+    // pressing it does.
+    var next = nextAfter(name);
+    themeButton.textContent = next;
+    themeButton.setAttribute('aria-label', 'Switch to the ' + next + ' theme');
 
     // Read the ground back out of the palette rather than repeating it here,
     // so the browser chrome follows whatever the theme block declares.
@@ -56,7 +64,7 @@
     applyTheme(storedTheme());
 
     themeButton.addEventListener('click', function () {
-      applyTheme(THEMES[(THEMES.indexOf(storedTheme()) + 1) % THEMES.length]);
+      applyTheme(nextAfter(storedTheme()));
     });
   }
 
