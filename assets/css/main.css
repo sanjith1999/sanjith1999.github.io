@@ -7,14 +7,13 @@
 /* --- Tokens --------------------------------------------------------------- */
 /* Themes. One palette per block, always the same token names.
 
-   `:root` is the default (warm light). The dark block applies only while
-   nothing has been chosen — `:not([data-theme])` — so a stored choice
-   silently switches the system preference off. The explicit blocks come
-   after it: they match its specificity, and the later rule wins.
+   Grey sits on `:root` and is what everyone gets. The system preference
+   is deliberately not consulted: dark is a choice the reader makes with
+   the control in the header, which stores it and sets `data-theme`.
 
    To add a theme: append a `:root[data-theme="name"]` block redefining
    whatever differs, and add the name to THEMES in assets/js/main.js. A
-   token left out simply inherits the warm light value above. */
+   token left out simply inherits the grey value above. */
 :root {
   color-scheme: light;
 
@@ -78,33 +77,8 @@
   --space-5: 5rem;
 }
 
-/* Dark, only while the reader has not chosen for themselves. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    color-scheme: dark;
-
-    --bg:        #16171b;
-    --bg-sunk:   #1e1f25;
-    --ink:       #e7e4dd;
-    --ink-muted: #a9a49a;
-    --ink-faint: #7c776e;
-    --rule:      #2e3038;
-    --accent:    #7fd1c6;
-    --accent-soft: #1f2e2d;
-    --select:    #274441;
-
-    --code-key:  #d78fc8;
-    --code-str:  #9ccf92;
-    --code-num:  #e0a06a;
-    --code-fn:   #85b8f0;
-    --code-type: #7fd1c6;
-    --code-err:  #ef8a80;
-  }
-}
-
-/* Grey is the palette on `:root`, so choosing it only needs to exist as a
-   name — the attribute switches the dark media query off and the default
-   applies. A future light theme would declare its own tokens here. */
+/* Grey is the palette on `:root`, so the attribute only has to exist as a
+   name. A future theme would declare its own tokens in a block like this. */
 :root[data-theme="grey"] { color-scheme: light; }
 
 :root[data-theme="dark"] {

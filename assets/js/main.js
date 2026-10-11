@@ -24,24 +24,29 @@
 
   /* Theme ------------------------------------------------------------------ */
   /* Add a theme by appending its name here and adding the matching
-     :root[data-theme="name"] block in main.css. "auto" means no attribute,
-     which hands the page back to prefers-color-scheme. */
-  var THEMES = ['auto', 'grey', 'dark'];
+     :root[data-theme="name"] block in main.css. The first is the default
+     for anyone who has not chosen. */
+  var THEMES = ['grey', 'dark'];
   var themeButton = document.querySelector('[data-theme-toggle]');
 
   function storedTheme() {
     try {
       var t = localStorage.getItem('theme');
-      return THEMES.indexOf(t) === -1 ? 'auto' : t;
-    } catch (e) { return 'auto'; }
+      return THEMES.indexOf(t) === -1 ? THEMES[0] : t;
+    } catch (e) { return THEMES[0]; }
   }
 
   function applyTheme(name) {
-    if (name === 'auto') document.documentElement.removeAttribute('data-theme');
-    else document.documentElement.setAttribute('data-theme', name);
+    document.documentElement.setAttribute('data-theme', name);
 
     themeButton.textContent = name;
     themeButton.setAttribute('aria-label', 'Theme: ' + name + '. Activate to change.');
+
+    // Read the ground back out of the palette rather than repeating it here,
+    // so the browser chrome follows whatever the theme block declares.
+    var meta = document.querySelector('meta[name="theme-color"]');
+    var bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+    if (meta && bg) meta.setAttribute('content', bg);
 
     try { localStorage.setItem('theme', name); } catch (e) { /* nothing to remember it with */ }
   }

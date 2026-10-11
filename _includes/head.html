@@ -23,8 +23,8 @@
 {%- endif %}
 <meta name="twitter:card" content="{% if page.cover %}summary_large_image{% else %}summary{% endif %}">
 
-<meta name="theme-color" content="#e8eaed" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#16171b" media="(prefers-color-scheme: dark)">
+{%- comment -%} Grey is the default for everyone; main.js updates this on a switch. {%- endcomment -%}
+<meta name="theme-color" content="#e8eaed">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
   (function () {
     try {
       var t = localStorage.getItem('theme');
-      if (t && t !== 'auto') document.documentElement.setAttribute('data-theme', t);
+      if (t) document.documentElement.setAttribute('data-theme', t);
     } catch (e) { /* private mode, blocked storage: fall back to the system theme */ }
   })();
 </script>
