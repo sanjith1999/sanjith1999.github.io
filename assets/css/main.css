@@ -180,9 +180,10 @@ h3 { font-size: var(--step-1); letter-spacing: -0.02em; }
 .lede { font-family: var(--body); font-size: var(--step-1); color: var(--ink-muted); line-height: 1.5; }
 
 /* --- Home ----------------------------------------------------------------- */
-/* No measure of its own: `.wrap` already bounds it, and anything narrower
-   reads as an inset column beside the full-width sections below. */
-.hero { padding-block: var(--space-4) var(--space-5); }
+/* Stops roughly under the end of "Ideas" in the nav — near enough to read
+   as an alignment, without being pinned to the nav's letter count. Below
+   52rem the wrap is narrower anyway, so this simply stops applying. */
+.hero { padding-block: var(--space-4) var(--space-5); max-width: 52rem; }
 .hero h1 { margin-bottom: var(--space-2); }
 .hero-role {
   font-family: var(--mono); font-size: var(--step-0); color: var(--accent);
