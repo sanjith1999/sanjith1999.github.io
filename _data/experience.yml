@@ -11,7 +11,7 @@
 
 - when: 2023 — 2024
   role: Undergraduate Researcher, Computational Imaging
-  org: Wadduwage Lab, Harvard University
+  org: Wadduwage Lab, Old Dominion University, VA
   where: Remote
   note: >-
     Simulating a 3D fluorescence microscope that encodes a volume onto a 2D detector,
